@@ -1,9 +1,9 @@
 // ===== ЭТОТ ФАЙЛ ТЫ РЕДАКТИРУЕШЬ САМ =====
 // Название кинотеатра (вверху сайта):
-const SITE_TITLE = "КИНОТЕАТР ФЕДОР";
+const SITE_TITLE = "FIDORIUM";
 
 // Название и описание сериала на главной (ru - по-русски, en - по-английски):
-const SERIES_TITLE = { ru: "Название сериала", en: "Series title" };
+const SERIES_TITLE = { ru: "Тюряга", en: "Jail" };
 const SERIES_DESC = { ru: "Короткое описание сериала. Его видно на главной странице.", en: "A short description of the series shown on the home page." };
 
 // Чтобы добавить серию: скопируй одну строку { ... }, поменяй название, описание и ссылки.
