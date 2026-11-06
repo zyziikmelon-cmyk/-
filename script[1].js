@@ -1,10 +1,10 @@
 const TXT = {
-  ru: { dub: "Озвучка", sDub: "Озвучка по умолчанию", sDubHint: "Если такой озвучки у серии нет, включится русская.", dubNames: { ru: "Русская", en: "English" }, isNew: "Новинка", seeAll: "Все результаты", home: "Главная", series: "Сериалы", movies: "Фильмы", favorites: "Любимое", search: "Поиск", settings: "Настройки", kicker: "Сейчас в кинотеатре", kSeries: "Сериал", kMovie: "Фильм", season: "Сезон", seasonsN: "сез.", ep: "серия", min: "мин", left: "Осталось", seen: "Просмотрено",
+  ru: { emTitle: "Серия пока недоступна", emText: "Загляни позже, мы скоро её добавим.", errTitle: "Что-то пошло не так", errText: "Не удалось загрузить видео. Возможно, сервер перегружен. Попробуй ещё раз чуть позже.", errCode: "Код ошибки", retry: "Повторить", skipCred: "Пропустить титры", secWatch: "Просмотр", secLook: "Внешний вид", secData: "Данные", sAccent: "Цвет акцента", sSpeed: "Скорость по умолчанию", sCalm: "Спокойный режим", sCalmHint: "Отключает анимации на сайте.", dub: "Озвучка", sDub: "Озвучка по умолчанию", sDubHint: "Если такой озвучки у серии нет, включится русская.", dubNames: { ru: "Русская", en: "English" }, isNew: "Новинка", seeAll: "Все результаты", home: "Главная", series: "Сериалы", movies: "Фильмы", favorites: "Любимое", search: "Поиск", settings: "Настройки", kicker: "Сейчас в кинотеатре", kSeries: "Сериал", kMovie: "Фильм", season: "Сезон", seasonsN: "сез.", ep: "серия", min: "мин", left: "Осталось", seen: "Просмотрено",
     cont: "Продолжить просмотр", favRow: "Любимое", topRow: "Топ", allRow: "Все по новизне", play: "Смотреть", resume: "Продолжить", more: "Подробнее", addFav: "В любимое", inFav: "В любимом", trailer: "Трейлер сезона", trailerOf: "Трейлер", seasons: "Сезоны и серии",
     noFav: "Здесь появятся сериалы и фильмы, которые ты отметишь сердечком.", noFind: "Ничего не найдено.", noList: "Пока здесь пусто.", added: "Добавлено в любимое", removed: "Убрано из любимого",
     sLang: "Язык", sQuality: "Качество по умолчанию", sQHint: "Если такого качества у видео нет, выберется ближайшее.", qMax: "Максимальное", sNext: "Автозапуск следующей серии", sSkip: "Пропускать заставку автоматически", sBackup: "Резервная копия", sBHint: "Любимое и прогресс хранятся в этом браузере. Скопируй код и вставь его на другом устройстве.", exp: "Копировать", imp: "Вставить", sReset: "История просмотра", reset: "Очистить", sure: "Очистить историю просмотра?", copied: "Код скопирован", copyThis: "Скопируй код:", pasteIt: "Вставь код:", done: "Готово", bad: "Код не подошёл",
     next: "Следующая серия", quality: "Качество", speed: "Скорость", normal: "Обычная", empty: "Видео пока не добавлено. Вставь ссылку в episodes.js или catalog.js.", skip: "Пропустить заставку", upnext: "Дальше", now: "Смотреть сейчас", cancel: "Отмена" },
-  en: { dub: "Audio", sDub: "Default audio", sDubHint: "If an episode lacks this audio, Russian is used.", dubNames: { ru: "Russian", en: "English" }, isNew: "New", seeAll: "All results", home: "Home", series: "Series", movies: "Movies", favorites: "Favorites", search: "Search", settings: "Settings", kicker: "Now showing", kSeries: "Series", kMovie: "Movie", season: "Season", seasonsN: "seasons", ep: "episode", min: "min", left: "Left", seen: "Watched",
+  en: { emTitle: "Episode not available yet", emText: "Check back later, we will add it soon.", errTitle: "Something went wrong", errText: "The video could not be loaded. The server may be overloaded. Please try again a little later.", errCode: "Error code", retry: "Retry", skipCred: "Skip credits", secWatch: "Playback", secLook: "Appearance", secData: "Data", sAccent: "Accent color", sSpeed: "Default speed", sCalm: "Calm mode", sCalmHint: "Turns off animations on the site.", dub: "Audio", sDub: "Default audio", sDubHint: "If an episode lacks this audio, Russian is used.", dubNames: { ru: "Russian", en: "English" }, isNew: "New", seeAll: "All results", home: "Home", series: "Series", movies: "Movies", favorites: "Favorites", search: "Search", settings: "Settings", kicker: "Now showing", kSeries: "Series", kMovie: "Movie", season: "Season", seasonsN: "seasons", ep: "episode", min: "min", left: "Left", seen: "Watched",
     cont: "Continue watching", favRow: "Favorites", topRow: "Top", allRow: "All by newest", play: "Watch", resume: "Continue", more: "Details", addFav: "Favorite", inFav: "In favorites", trailer: "Season trailer", trailerOf: "Trailer", seasons: "Seasons and episodes",
     noFav: "Series and movies you mark with a heart will appear here.", noFind: "Nothing found.", noList: "Nothing here yet.", added: "Added to favorites", removed: "Removed from favorites",
     sLang: "Language", sQuality: "Default quality", sQHint: "If a video lacks this quality, the closest one is used.", qMax: "Maximum", sNext: "Autoplay next episode", sSkip: "Skip intro automatically", sBackup: "Backup", sBHint: "Favorites and progress are stored in this browser. Copy the code and paste it on another device.", exp: "Copy", imp: "Paste", sReset: "Watch history", reset: "Clear", sure: "Clear watch history?", copied: "Code copied", copyThis: "Copy the code:", pasteIt: "Paste the code:", done: "Done", bad: "Invalid code",
@@ -55,9 +55,16 @@ let fav = store.get("fav", []);
 let prog = store.get("progress", {});
 let lasts = store.get("lasts", null);
 if (!lasts) { lasts = {}; const l = store.get("last", null); if (l) lasts.main = { s: l.s, i: l.i, ts: Date.now() }; }
-let cfg = Object.assign({ quality: "max", dub: "ru", autonext: true, autoskip: false }, store.get("cfg", {}));
-let active = null, lastSave = 0, upRaf = 0, hideT = 0, menuOpen = false, rate = 1, dragging = false, wasIdle = false, tSeason = 0, lastTitle = "";
-let UP_MS = 8000;
+let cfg = Object.assign({ quality: "max", dub: "ru", accent: "gold", speed: 1, calm: false, autonext: true, autoskip: false }, store.get("cfg", {}));
+const ACCENTS = { gold: ["#d9b46b", "#a97a2c", "#f3dca4", "217,180,107"], coral: ["#ff8a6b", "#c4553a", "#ffc2b0", "255,138,107"], mint: ["#6bd9a8", "#2e9c70", "#b5f0d6", "107,217,168"], sky: ["#6bb8ff", "#2f7fc7", "#b8dcff", "107,184,255"], lilac: ["#b79bff", "#7a5ccf", "#dccfff", "183,155,255"] };
+function applyTheme() {
+  const a = ACCENTS[cfg.accent] || ACCENTS.gold, st = document.documentElement.style;
+  st.setProperty("--gold", a[0]); st.setProperty("--gold-d", a[1]); st.setProperty("--gold-l", a[2]);
+  st.setProperty("--glow", "rgba(" + a[3] + ",.14)"); st.setProperty("--glow2", "rgba(" + a[3] + ",.35)");
+  document.documentElement.classList.toggle("calm", !!cfg.calm);
+}
+let active = null, lastSave = 0, hideT = 0, menuOpen = false, rate = 1, dragging = false, wasIdle = false, tSeason = 0, lastTitle = "";
+let UP_LEAD = 20, emptyKind = "none";
 const saveAll = () => { store.set("fav", fav); store.set("progress", prog); store.set("lasts", lasts); store.set("cfg", cfg); };
 const L = () => TXT[lang];
 const tr = o => (typeof o === "string" ? o : (o && (o[lang] || o.ru)) || "");
@@ -197,14 +204,22 @@ function viewTitle(id) {
   return out;
 }
 function viewSettings() {
-  const sel = (opts, val, fn) => { const s = h("select", { onchange: () => fn(s.value) }, opts.map(([x, l]) => h("option", { value: x }, l))); s.value = val; return s; };
-  const sw = k => { const b = h("button", { class: "sw", type: "button", role: "switch", "aria-checked": cfg[k], onclick: () => { cfg[k] = !cfg[k]; saveAll(); b.setAttribute("aria-checked", cfg[k]); } }, h("i")); return b; };
+  const sel = (opts, val, fn) => { const x = h("select", { onchange: () => fn(x.value) }, opts.map(([k, l]) => h("option", { value: k }, l))); x.value = val; return x; };
+  const sw = k => { const b = h("button", { class: "sw", type: "button", role: "switch", "aria-checked": cfg[k], onclick: () => { cfg[k] = !cfg[k]; saveAll(); applyTheme(); b.setAttribute("aria-checked", cfg[k]); } }, h("i")); return b; };
   const r = (l, sub, ctl) => h("div", { class: "srow" }, h("div", null, h("b", null, l), sub ? h("small", null, sub) : null), ctl);
+  const sec = t => h("h3", { class: "sec" }, t);
+  const dots = h("div", { class: "acc" }, Object.keys(ACCENTS).map(k => h("button", { type: "button", class: "dot" + (cfg.accent === k ? " on" : ""), style: "background:" + ACCENTS[k][0], "aria-label": k, onclick: () => { cfg.accent = k; saveAll(); applyTheme(); render(); } })));
   return h("section", { class: "page settings" }, h("h1", null, L().settings),
-    r(L().sLang, null, sel([["ru", "Русский"], ["en", "English"]], lang, x => { lang = x; store.set("lang", lang); render(); })),
+    sec(L().secWatch),
     r(L().sQuality, L().sQHint, sel([["max", L().qMax], ["720", "720p"], ["480", "480p"]], cfg.quality, x => { cfg.quality = x; saveAll(); })),
     r(L().sDub, L().sDubHint, sel([["ru", L().dubNames.ru], ["en", L().dubNames.en]], cfg.dub, x => { cfg.dub = x; saveAll(); })),
+    r(L().sSpeed, null, sel([[0.75, "0.75x"], [1, L().normal], [1.25, "1.25x"], [1.5, "1.5x"]], cfg.speed, x => { cfg.speed = +x; saveAll(); })),
     r(L().sNext, null, sw("autonext")), r(L().sSkip, null, sw("autoskip")),
+    sec(L().secLook),
+    r(L().sLang, null, sel([["ru", "Русский"], ["en", "English"]], lang, x => { lang = x; store.set("lang", lang); render(); })),
+    r(L().sAccent, null, dots),
+    r(L().sCalm, L().sCalmHint, sw("calm")),
+    sec(L().secData),
     r(L().sBackup, L().sBHint, h("div", { class: "btns" }, h("button", { class: "btn", type: "button", onclick: exportData }, L().exp), h("button", { class: "btn", type: "button", onclick: importData }, L().imp))),
     r(L().sReset, null, h("button", { class: "btn", type: "button", onclick: resetAll }, L().reset)));
 }
@@ -230,7 +245,7 @@ function render(anim) {
   $("lang").textContent = lang === "ru" ? "EN" : "RU";
   $("q").placeholder = L().search;
   document.querySelectorAll("[data-k]").forEach(a => { a.textContent = L()[a.dataset.k]; });
-  $("next").textContent = L().next; $("empty").textContent = L().empty; $("skip").textContent = L().skip;
+  $("next").textContent = L().next; renderEmpty();
   $("unLabel").textContent = L().upnext; $("unNow").textContent = L().now; $("unCancel").textContent = L().cancel;
   const [n, a] = route();
   const key = location.hash || "#home", same = key === lastKey;
@@ -241,15 +256,47 @@ function render(anim) {
   $("foot").textContent = "© " + new Date().getFullYear() + " " + SITE_TITLE;
   const views = { home: viewHome, series: () => viewList("series"), movies: () => viewList("movie"), favorites: viewFav, settings: viewSettings, search: viewSearch, title: () => viewTitle(a) };
   $("app").replaceChildren(...[].concat((views[n] || viewHome)()).filter(Boolean));
+  document.querySelectorAll(".card p").forEach(p => p.classList.toggle("long", p.scrollHeight > p.clientHeight + 1));
   document.querySelectorAll("[data-r]").forEach(l => l.classList.toggle("on", l.dataset.r === n));
 }
 
 /* ---------- плеер ---------- */
+const ARCH = /^https?:\/\/archive\.org\/details\/([^/?#]+)/i, resolved = {};
+async function resolveUrl(u) {
+  const m = ARCH.exec(u);
+  if (!m) return u;
+  if (resolved[m[1]]) return resolved[m[1]];
+  try {
+    const d = await (await fetch("https://archive.org/metadata/" + m[1])).json();
+    const fs = (d.files || []).filter(f => /\.(mp4|m4v|webm|mov)$/i.test(f.name));
+    const f = fs.find(x => x.source === "original") || fs[0];
+    if (f) return (resolved[m[1]] = "https://archive.org/download/" + m[1] + "/" + f.name.split("/").map(encodeURIComponent).join("/"));
+  } catch (e) {}
+  return u;
+}
+function loadSrc(raw, autoplay) {
+  const o = active;
+  o.cur = raw; o.ready = false;
+  $("empty").hidden = true;
+  resolveUrl(raw).then(u => {
+    if (active !== o || o.cur !== raw) return;
+    v.src = u;
+    if (autoplay) v.play().catch(() => {});
+  });
+}
+function renderEmpty() {
+  const err = emptyKind === "err";
+  $("emTitle").textContent = err ? L().errTitle : L().emTitle;
+  $("emText").textContent = err ? L().errText : L().emText;
+  $("emCode").textContent = err && active && active.errCode ? L().errCode + ": " + active.errCode : "";
+  $("emRetry").textContent = L().retry; $("emRetry").hidden = !err;
+}
+function showEmpty(kind) { emptyKind = kind; renderEmpty(); $("empty").hidden = false; $("skip").hidden = true; hideUpNext(); }
 function openPlayer(o) {
   if (document.activeElement && document.activeElement.blur) document.activeElement.blur();
   saveProgress(true);
   hideUpNext(); closeMenu();
-  active = o; o.ready = false; rate = 1;
+  active = o; o.ready = false; rate = cfg.speed || 1;
   document.body.style.overflow = "hidden";
   $("player").hidden = false;
   $("pTitle").textContent = o.title;
@@ -257,16 +304,14 @@ function openPlayer(o) {
   o.dubKey = o.dubs[cfg.dub] ? cfg.dub : (o.dubs.ru ? "ru" : Object.keys(o.dubs)[0]);
   o.srcs = sourcesOf(o.dubs[o.dubKey]);
   if (!o.srcs.length && o.dubKey !== "ru" && o.dubs.ru) { o.dubKey = "ru"; o.srcs = sourcesOf(o.dubs.ru); }
-  $("empty").hidden = o.srcs.length > 0;
+  $("empty").hidden = true;
   $("next").hidden = !o.next;
   $("skip").hidden = true;
   v.pause();
-  if (!o.srcs.length) { v.removeAttribute("src"); v.load(); updateUI(); poke(); return; }
-  o.cur = pickSrc(o.srcs);
+  if (!o.srcs.length) { v.removeAttribute("src"); v.load(); showEmpty("none"); updateUI(); poke(); return; }
   const sv = o.id && prog[o.id];
   o.resumeAt = sv && sv.d && sv.t > 2 && sv.t < sv.d - 5 ? sv.t : 0;
-  v.src = o.cur;
-  v.play().catch(() => {});
+  loadSrc(pickSrc(o.srcs), true);
   poke();
 }
 function playEpisode(tid, s, i) {
@@ -279,6 +324,7 @@ function playEpisode(tid, s, i) {
     title: tr(t.title) + (t.kind === "movie" ? "" : " · " + L().season + " " + (s + 1) + ": " + (i + 1) + " " + L().ep),
     dubs: Object.assign({ ru: e.video }, e.dub || {}),
     intro: e.intro || t.seasons[s].intro || null,
+    credits: e.credits || t.seasons[s].credits || null,
     nextInfo: n,
     next: n ? () => playEpisode(tid, n.s, n.i) : null
   });
@@ -310,15 +356,17 @@ function showUpNext(n) {
   $("unTitle").textContent = L().season + " " + (n.s + 1) + " · " + (n.i + 1) + " " + L().ep + ": " + tr(e.title);
   $("unBar").style.width = "0";
   $("upnext").hidden = false; $("skip").hidden = true;
-  const tid = active.tid, t0 = performance.now();
-  const tick = now => {
-    const k = Math.min(1, (now - t0) / UP_MS);
-    $("unBar").style.width = k * 100 + "%";
-    if (k >= 1) { $("upnext").hidden = true; playEpisode(tid, n.s, n.i); } else upRaf = requestAnimationFrame(tick);
-  };
-  upRaf = requestAnimationFrame(tick);
 }
-function hideUpNext() { cancelAnimationFrame(upRaf); $("upnext").hidden = true; }
+function hideUpNext() { $("upnext").hidden = true; }
+function updateUpNext() {
+  const a = active;
+  if (!a || !a.nextInfo || !v.duration || !isFinite(v.duration)) return;
+  const d = v.duration, t = v.currentTime, at = Math.max(d - UP_LEAD, d * 0.7);
+  if (t < at - 0.5) { if (!$("upnext").hidden) hideUpNext(); a.dismissed = false; return; }
+  if (a.dismissed) return;
+  if ($("upnext").hidden) showUpNext(a.nextInfo);
+  $("unBar").style.width = Math.min(100, (t - at) / (d - at) * 100) + "%";
+}
 function updateUI() {
   const d = v.duration || 0, t = v.currentTime || 0, k = d ? t / d : 0;
   $("fill").style.width = k * 100 + "%"; $("knob").style.left = k * 100 + "%";
@@ -328,11 +376,15 @@ function updateUI() {
   $("buf").style.width = d ? b / d * 100 + "%" : "0";
 }
 function checkSkip() {
-  const a = active;
-  if (!a || !a.intro || !$("upnext").hidden) { $("skip").hidden = true; return; }
-  const t = v.currentTime, inI = t >= (a.intro.start || 0) && t < a.intro.end - 0.3;
-  if (inI && cfg.autoskip && !a.skipped) { a.skipped = true; v.currentTime = a.intro.end; $("skip").hidden = true; return; }
-  $("skip").hidden = !inI;
+  const a = active, sk = $("skip");
+  if (!a || !$("empty").hidden || !$("upnext").hidden) { sk.hidden = true; return; }
+  const t = v.currentTime;
+  const inI = a.intro && t >= (a.intro.start || 0) && t < a.intro.end - 0.3;
+  if (inI && cfg.autoskip && !a.skipped) { a.skipped = true; v.currentTime = a.intro.end; sk.hidden = true; return; }
+  const inC = !inI && a.credits && t >= a.credits.start;
+  a.skipMode = inI ? "intro" : inC ? "credits" : "";
+  sk.textContent = inC ? L().skipCred : L().skip;
+  sk.hidden = !(inI || inC);
 }
 function syncPP() { $("pp").innerHTML = v.paused ? IC.play : IC.pause; $("pp").setAttribute("aria-label", v.paused ? "Play" : "Pause"); }
 function syncVol() { $("mute").innerHTML = v.muted || v.volume === 0 ? IC.mute : IC.vol; $("vol").value = v.muted ? 0 : v.volume; }
@@ -353,9 +405,8 @@ function toggleFS() {
 function switchSrc(u) {
   if (!active) return;
   const t = v.currentTime, was = !v.paused;
-  active.cur = u; active.resumeAt = t; active.ready = false;
-  v.src = u;
-  if (was) v.play().catch(() => {});
+  active.resumeAt = t;
+  loadSrc(u, was);
 }
 function switchDub(k) {
   if (!active) return;
@@ -383,7 +434,13 @@ v.addEventListener("loadedmetadata", () => {
   if (active.resumeAt) { try { v.currentTime = active.resumeAt; } catch (e) {} active.resumeAt = 0; }
   v.playbackRate = rate; active.ready = true; updateUI();
 });
-v.addEventListener("timeupdate", () => { saveProgress(false); updateUI(); checkSkip(); });
+v.addEventListener("timeupdate", () => { saveProgress(false); updateUI(); updateUpNext(); checkSkip(); });
+v.addEventListener("error", () => {
+  if (!active || !v.getAttribute("src")) return;
+  active.errAt = v.currentTime; active.errCode = v.error ? v.error.code : "";
+  console.warn("Видео не загрузилось:", v.currentSrc, v.error);
+  showEmpty("err");
+});
 v.addEventListener("progress", updateUI);
 v.addEventListener("durationchange", updateUI);
 v.addEventListener("play", () => { syncPP(); poke(); });
@@ -393,7 +450,8 @@ v.addEventListener("ended", () => {
   if (!active) return;
   if (active.id && active.ready) { prog[active.id] = { t: v.duration, d: v.duration }; store.set("progress", prog); }
   $("player").classList.remove("idle");
-  if (active.nextInfo && cfg.autonext) showUpNext(active.nextInfo);
+  const n = active.nextInfo;
+  if (n && cfg.autonext && !active.dismissed) playEpisode(active.tid, n.s, n.i);
 });
 v.addEventListener("click", () => { if (wasIdle && matchMedia("(pointer:coarse)").matches) return; toggle(); });
 v.addEventListener("dblclick", toggleFS);
@@ -425,14 +483,20 @@ $("vol").oninput = () => { v.volume = +$("vol").value; v.muted = v.volume === 0;
 $("fs").onclick = toggleFS;
 $("gear").onclick = () => { if (menuOpen) { closeMenu(); poke(); } else openMenu(); };
 $("next").onclick = () => active && active.next && active.next();
-$("skip").onclick = () => { if (active && active.intro) { v.currentTime = active.intro.end; $("skip").hidden = true; } };
+$("skip").onclick = () => {
+  if (!active) return;
+  if (active.skipMode === "intro" && active.intro) v.currentTime = active.intro.end;
+  else if (active.skipMode === "credits") { if (active.nextInfo) playEpisode(active.tid, active.nextInfo.s, active.nextInfo.i); else v.currentTime = Math.max(0, v.duration - 0.2); }
+  $("skip").hidden = true;
+};
+$("emRetry").onclick = () => { if (!active || !active.cur) return; active.resumeAt = active.errAt || 0; v.removeAttribute("src"); loadSrc(active.cur, true); };
 $("unNow").onclick = () => { const n = active && active.nextInfo; if (n) playEpisode(active.tid, n.s, n.i); };
-$("unCancel").onclick = hideUpNext;
+$("unCancel").onclick = () => { if (active) active.dismissed = true; hideUpNext(); };
 $("back").onclick = closePlayer;
 document.addEventListener("keydown", e => {
   if ($("player").hidden) return;
   const k = e.key;
-  if (k === "Escape") { if (menuOpen) closeMenu(); else if (!$("upnext").hidden) hideUpNext(); else closePlayer(); return; }
+  if (k === "Escape") { if (menuOpen) closeMenu(); else if (!$("upnext").hidden) { if (active) active.dismissed = true; hideUpNext(); } else closePlayer(); return; }
   if (e.target.tagName === "INPUT" || (e.target.tagName === "BUTTON" && e.target.closest("#player") && (k === " " || k === "Enter"))) return;
   if (k === " " || k === "k") { e.preventDefault(); toggle(); }
   else if (k === "ArrowRight") { e.preventDefault(); skipBy(10); }
@@ -470,5 +534,6 @@ $("q").addEventListener("keydown", e => {
 });
 $("qx").onclick = () => { $("q").value = ""; closeSug(); $("qx").hidden = true; if (route()[0] === "search") go("home"); $("q").focus(); };
 document.addEventListener("click", e => { if (!e.target.closest(".sbox")) closeSug(); });
+applyTheme();
 $("pp").innerHTML = IC.play; $("gear").innerHTML = IC.gear; $("fs").innerHTML = IC.fs; $("setBtn").innerHTML = IC.gear; syncVol();
 render();
