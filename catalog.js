@@ -24,4 +24,4 @@ const EXTRA_TITLES = [
 
 // ===== КОММЕНТАРИИ (через Giscus, бесплатно) =====
 // Включатся, когда в categoryId появится значение. Инструкция - у Claude в чате.
-const GISCUS = { repo: "zyziikmelon-cmyk/-", repoId: "R_kgDOViz89g", category: "General", categoryId: "" };
+const GISCUS = { repo: "zyziikmelon-cmyk/-", repoId: "R_kgDOViz89g", category: "General", categoryId: "DIC_kwDOViz89s4DKm7K" };
