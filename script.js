@@ -1,10 +1,10 @@
 const TXT = {
-  ru: { author: "Для автора", authorTool: "Разметка серии", aSrc: "Видео играет с адреса", aNow: "Сейчас", aIntroS: "Заставка: начало", aIntroE: "Заставка: конец", aCredS: "Титры: начало", aCopy: "Скопировать", aHint: "Поставь видео на нужный момент и нажми кнопку. Готовую строку вставь в episodes.js после video: {...},", aClose: "Закрыть", slowNet: "Слабое соединение: включено качество ниже", emTitle: "Серия пока недоступна", emText: "Загляни позже, мы скоро её добавим.", errTitle: "Что-то пошло не так", errText: "Не удалось загрузить видео. Возможно, сервер перегружен. Попробуй ещё раз чуть позже.", errCode: "Код ошибки", retry: "Повторить", skipCred: "Пропустить титры", secWatch: "Просмотр", secLook: "Внешний вид", secData: "Данные", sAccent: "Цвет акцента", sSpeed: "Скорость по умолчанию", sCalm: "Спокойный режим", sCalmHint: "Отключает анимации на сайте.", dub: "Озвучка", sDub: "Озвучка по умолчанию", sDubHint: "Если такой озвучки у серии нет, включится русская.", dubNames: { ru: "Русская", en: "English" }, isNew: "Новинка", seeAll: "Все результаты", home: "Главная", series: "Сериалы", movies: "Фильмы", favorites: "Любимое", search: "Поиск", settings: "Настройки", kicker: "Сейчас в кинотеатре", kSeries: "Сериал", kMovie: "Фильм", season: "Сезон", seasonsN: "сез.", ep: "серия", min: "мин", left: "Осталось", seen: "Просмотрено",
+  ru: { rateT: "Оцените", rateYour: "Ваша оценка", rateThanks: "Спасибо за оценку!", rateVotes: "оценок", share: "Поделиться", copied: "Ссылка скопирована", author: "Для автора", authorTool: "Разметка серии", aSrc: "Видео играет с адреса", aNow: "Сейчас", aIntroS: "Заставка: начало", aIntroE: "Заставка: конец", aCredS: "Титры: начало", aCopy: "Скопировать", aHint: "Поставь видео на нужный момент и нажми кнопку. Готовую строку вставь в episodes.js после video: {...},", aClose: "Закрыть", slowNet: "Слабое соединение: включено качество ниже", emTitle: "Серия пока недоступна", emText: "Загляни позже, мы скоро её добавим.", errTitle: "Что-то пошло не так", errText: "Не удалось загрузить видео. Возможно, сервер перегружен. Попробуй ещё раз чуть позже.", errCode: "Код ошибки", retry: "Повторить", skipCred: "Пропустить титры", secWatch: "Просмотр", secLook: "Внешний вид", secData: "Данные", sAccent: "Цвет акцента", sSpeed: "Скорость по умолчанию", sCalm: "Спокойный режим", sCalmHint: "Отключает анимации на сайте.", dub: "Озвучка", sDub: "Озвучка по умолчанию", sDubHint: "Если такой озвучки у серии нет, включится русская.", dubNames: { ru: "Русская", en: "English" }, isNew: "Новинка", seeAll: "Все результаты", home: "Главная", series: "Сериалы", movies: "Фильмы", favorites: "Любимое", search: "Поиск", settings: "Настройки", kicker: "Сейчас в кинотеатре", kSeries: "Сериал", kMovie: "Фильм", season: "Сезон", seasonsN: "сез.", ep: "серия", min: "мин", left: "Осталось", seen: "Просмотрено",
     cont: "Продолжить просмотр", favRow: "Любимое", topRow: "Топ", allRow: "Все по новизне", play: "Смотреть", resume: "Продолжить", more: "Подробнее", addFav: "В любимое", inFav: "В любимом", trailer: "Трейлер сезона", trailerOf: "Трейлер", seasons: "Сезоны и серии",
     noFav: "Здесь появятся сериалы и фильмы, которые ты отметишь сердечком.", noFind: "Ничего не найдено.", noList: "Пока здесь пусто.", added: "Добавлено в любимое", removed: "Убрано из любимого",
     sLang: "Язык", sQuality: "Качество по умолчанию", sQHint: "Если такого качества у видео нет, выберется ближайшее.", qMax: "Максимальное", sNext: "Автозапуск следующей серии", sSkip: "Пропускать заставку автоматически", sBackup: "Резервная копия", sBHint: "Любимое и прогресс хранятся в этом браузере. Скопируй код и вставь его на другом устройстве.", exp: "Копировать", imp: "Вставить", sReset: "История просмотра", reset: "Очистить", sure: "Очистить историю просмотра?", copied: "Код скопирован", copyThis: "Скопируй код:", pasteIt: "Вставь код:", done: "Готово", bad: "Код не подошёл",
     next: "Следующая серия", quality: "Качество", speed: "Скорость", normal: "Обычная", empty: "Видео пока не добавлено. Вставь ссылку в episodes.js или catalog.js.", skip: "Пропустить заставку", upnext: "Дальше", now: "Смотреть сейчас", cancel: "Отмена" },
-  en: { author: "For the author", authorTool: "Episode markup", aSrc: "Video is playing from", aNow: "Now", aIntroS: "Intro: start", aIntroE: "Intro: end", aCredS: "Credits: start", aCopy: "Copy", aHint: "Seek to the moment and press a button. Paste the line into episodes.js after video: {...},", aClose: "Close", slowNet: "Slow connection: switched to lower quality", emTitle: "Episode not available yet", emText: "Check back later, we will add it soon.", errTitle: "Something went wrong", errText: "The video could not be loaded. The server may be overloaded. Please try again a little later.", errCode: "Error code", retry: "Retry", skipCred: "Skip credits", secWatch: "Playback", secLook: "Appearance", secData: "Data", sAccent: "Accent color", sSpeed: "Default speed", sCalm: "Calm mode", sCalmHint: "Turns off animations on the site.", dub: "Audio", sDub: "Default audio", sDubHint: "If an episode lacks this audio, Russian is used.", dubNames: { ru: "Russian", en: "English" }, isNew: "New", seeAll: "All results", home: "Home", series: "Series", movies: "Movies", favorites: "Favorites", search: "Search", settings: "Settings", kicker: "Now showing", kSeries: "Series", kMovie: "Movie", season: "Season", seasonsN: "seasons", ep: "episode", min: "min", left: "Left", seen: "Watched",
+  en: { rateT: "Rate it", rateYour: "Your rating", rateThanks: "Thanks for rating!", rateVotes: "ratings", share: "Share", copied: "Link copied", author: "For the author", authorTool: "Episode markup", aSrc: "Video is playing from", aNow: "Now", aIntroS: "Intro: start", aIntroE: "Intro: end", aCredS: "Credits: start", aCopy: "Copy", aHint: "Seek to the moment and press a button. Paste the line into episodes.js after video: {...},", aClose: "Close", slowNet: "Slow connection: switched to lower quality", emTitle: "Episode not available yet", emText: "Check back later, we will add it soon.", errTitle: "Something went wrong", errText: "The video could not be loaded. The server may be overloaded. Please try again a little later.", errCode: "Error code", retry: "Retry", skipCred: "Skip credits", secWatch: "Playback", secLook: "Appearance", secData: "Data", sAccent: "Accent color", sSpeed: "Default speed", sCalm: "Calm mode", sCalmHint: "Turns off animations on the site.", dub: "Audio", sDub: "Default audio", sDubHint: "If an episode lacks this audio, Russian is used.", dubNames: { ru: "Russian", en: "English" }, isNew: "New", seeAll: "All results", home: "Home", series: "Series", movies: "Movies", favorites: "Favorites", search: "Search", settings: "Settings", kicker: "Now showing", kSeries: "Series", kMovie: "Movie", season: "Season", seasonsN: "seasons", ep: "episode", min: "min", left: "Left", seen: "Watched",
     cont: "Continue watching", favRow: "Favorites", topRow: "Top", allRow: "All by newest", play: "Watch", resume: "Continue", more: "Details", addFav: "Favorite", inFav: "In favorites", trailer: "Season trailer", trailerOf: "Trailer", seasons: "Seasons and episodes",
     noFav: "Series and movies you mark with a heart will appear here.", noFind: "Nothing found.", noList: "Nothing here yet.", added: "Added to favorites", removed: "Removed from favorites",
     sLang: "Language", sQuality: "Default quality", sQHint: "If a video lacks this quality, the closest one is used.", qMax: "Maximum", sNext: "Autoplay next episode", sSkip: "Skip intro automatically", sBackup: "Backup", sBHint: "Favorites and progress are stored in this browser. Copy the code and paste it on another device.", exp: "Copy", imp: "Paste", sReset: "Watch history", reset: "Clear", sure: "Clear watch history?", copied: "Code copied", copyThis: "Copy the code:", pasteIt: "Paste the code:", done: "Done", bad: "Invalid code",
@@ -70,7 +70,7 @@ const saveAll = () => { store.set("fav", fav); store.set("progress", prog); stor
 const L = () => TXT[lang];
 const tr = o => (typeof o === "string" ? o : (o && (o[lang] || o.ru)) || "");
 const firstVid = t => { for (const se of t.seasons) for (const e of se.episodes) { const x = sourcesOf(e.video)[0]; if (x) return x[1]; } return ""; };
-const BUILD = "сборка 12";
+const BUILD = "сборка 13";
 function dataStamp() {
   let x = 5381; const str = TITLES.map(t => firstVidAll(t)).join("#");
   for (let i = 0; i < str.length; i++) x = ((x << 5) + x + str.charCodeAt(i)) | 0;
@@ -163,18 +163,49 @@ const row = (title, cards, cls) => {
 const grid = list => h("div", { class: "grid" }, list);
 let popId = "";
 const favBtn = t => { const on = fav.includes(t.id); return h("button", { class: "btn fav" + (on ? " on" : "") + (on && popId === t.id ? " pop" : ""), type: "button", onclick: () => { toggleFav(t.id); popId = t.id; render(); popId = ""; } }, h("span", { class: "h" }, on ? "♥" : "♡"), " " + (on ? L().inFav : L().addFav)); };
+/* ---------- оценки ---------- */
+const RATE_API = "https://abacus.jasoncameron.dev", RATE_NS = "fidorium-zyziik";
+const STAR = '<svg viewBox="0 0 24 24" width="26" height="26"><path fill="currentColor" d="M12 2.8l2.85 5.78 6.38.93-4.62 4.5 1.09 6.35L12 17.35 6.3 20.36l1.09-6.35-4.62-4.5 6.38-.93z"/></svg>';
+const rateCache = {};
+function rateKey(id, n) { return String(id).replace(/[^A-Za-z0-9_-]/g, "") + "-s" + n; }
+async function rateGet(id) {
+  if (rateCache[id]) return rateCache[id];
+  const one = async n => { try { const c = new AbortController(); setTimeout(() => c.abort(), 4000); const r = await fetch(RATE_API + "/get/" + RATE_NS + "/" + rateKey(id, n), { signal: c.signal }); return r.ok ? (+(await r.json()).value || 0) : 0; } catch (e) { return null; } };
+  const arr = await Promise.all([1, 2, 3, 4, 5].map(one));
+  if (arr.some(x => x === null)) return null;
+  return (rateCache[id] = arr);
+}
+function ratingBox(t) {
+  const mine = store.get("ratings", {}), avg = h("span", { class: "r-avg" }), lab = h("span", { class: "r-lab" });
+  const stars = h("div", { class: "stars", role: "group" });
+  const paint = n => [...stars.children].forEach((b, i) => b.classList.toggle("on", i < n));
+  const btns = [1, 2, 3, 4, 5].map(n => h("button", { type: "button", "aria-label": n + "/5",
+    onmouseenter: () => { if (!mine[t.id]) paint(n); }, onfocus: () => { if (!mine[t.id]) paint(n); },
+    onclick: () => { if (mine[t.id]) return; mine[t.id] = n; store.set("ratings", mine); const c = rateCache[t.id]; if (c) c[n - 1]++;
+      try { fetch(RATE_API + "/hit/" + RATE_NS + "/" + rateKey(t.id, n)).catch(() => {}); } catch (e) {}
+      toast(L().rateThanks); state(); showAvg(); } }));
+  btns.forEach(b => { b.innerHTML = STAR; stars.append(b); }); stars.onmouseleave = () => paint(mine[t.id] || 0);
+  function state() { paint(mine[t.id] || 0); stars.classList.toggle("done", !!mine[t.id]); lab.textContent = mine[t.id] ? L().rateYour + ": " + mine[t.id] + "/5" : L().rateT; }
+  function showAvg() { const c = rateCache[t.id]; if (!c) return; const tot = c.reduce((a, b) => a + b, 0); avg.textContent = tot ? "★ " + (c.reduce((a, b, i) => a + b * (i + 1), 0) / tot).toFixed(1) + " · " + tot + " " + L().rateVotes : ""; }
+  state(); rateGet(t.id).then(showAvg);
+  return h("div", { class: "rate" }, h("div", null, lab, stars), avg);
+}
+function shareBtn(t) {
+  return h("button", { class: "btn", type: "button", onclick: async () => { const u = location.origin + location.pathname + "#title-" + t.id; try { if (navigator.share) await navigator.share({ title: tr(t.title), url: u }); else { await navigator.clipboard.writeText(u); toast(L().copied); } } catch (e) {} } }, L().share);
+}
 function hero(t, detail) {
   const r = resumeFor(t.id), bg = h("div", { class: "hero-bg" });
   if (t.poster) bg.style.backgroundImage = 'url("' + t.poster + '")'; else bg.append(h("b", { class: "hero-mark" }, "F"));
   const tr1 = detail && t.seasons[tSeason] && t.seasons[tSeason].trailer;
   return h("section", { class: "hero" }, bg, h("div", { class: "hero-in" },
-    h("p", { class: "kicker" }, detail ? [kindLabel(t), t.year, tr(t.genre), t.kind === "series" ? t.seasons.length + " " + L().seasonsN : ""].filter(Boolean).join(" · ") : L().kicker),
+    h("p", { class: "kicker" }, detail ? [kindLabel(t), t.year, tr(t.genre) !== kindLabel(t) ? tr(t.genre) : "", t.kind === "series" ? t.seasons.length + " " + L().seasonsN : ""].filter(Boolean).join(" · ") : L().kicker),
     h("h1", null, tr(t.title)), h("p", { class: "lead" }, tr(t.desc)),
     h("div", { class: "actions" },
       h("button", { class: "btn main", type: "button", onclick: () => playResume(t.id) }, r.fresh ? L().play : L().resume),
       detail ? null : h("button", { class: "btn", type: "button", onclick: () => go("title-" + t.id) }, L().more),
       tr1 ? h("button", { class: "btn", type: "button", onclick: () => playTrailer(t.id) }, L().trailer) : null,
-      favBtn(t)),
+      favBtn(t), detail ? shareBtn(t) : null),
+    detail ? ratingBox(t) : null,
     r.fresh ? null : h("p", { class: "rinfo" }, resumeLine(t))));
 }
 

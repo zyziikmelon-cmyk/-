@@ -207,3 +207,21 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;ba
 .calm .hero::before,.calm .hero-bg,.calm .row{animation:none}
 @media (prefers-reduced-motion:reduce){.hero::before,.hero-bg{animation:none}}
 @media (max-width:700px){.hdots{bottom:20px}.hero-mark{right:-6%;opacity:.1}}
+
+/* ===== сборка 13: оценки и мягкая полировка ===== */
+.rate{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin-top:22px}
+.r-lab{display:block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);margin-bottom:4px}
+.stars{display:flex;gap:2px;margin-left:-2px}
+.stars button{background:none;border:0;padding:2px;color:rgba(255,255,255,.22);cursor:pointer;line-height:0;transition:transform .25s cubic-bezier(.2,.8,.2,1),color .2s,filter .2s}
+.stars button.on{color:var(--gold);filter:drop-shadow(0 0 8px var(--glow2))}
+.stars:not(.done) button:hover{transform:scale(1.22) rotate(-6deg)}
+.stars.done button{cursor:default}
+.r-avg{font-weight:500;color:var(--gold-l);padding:7px 14px;border:1px solid var(--line);border-radius:99px;background:rgba(19,23,38,.6)}
+.r-avg:empty{display:none}
+:root{--r:14px}
+.top{background:linear-gradient(180deg,rgba(10,12,19,.92),rgba(10,12,19,.7));border-bottom-color:rgba(217,180,107,.12)}
+.hero h1{background:linear-gradient(180deg,#fff,#e9dcc0);-webkit-background-clip:text;background-clip:text;color:transparent;letter-spacing:-.01em}
+.hero .kicker{letter-spacing:.18em}
+.card h3,.card .t{transition:color .25s}.card:hover h3,.card:hover .t{color:var(--gold-l)}
+::selection{background:rgba(217,180,107,.35)}
+html{scroll-behavior:smooth}
