@@ -73,7 +73,7 @@ const saveAll = () => { store.set("fav", fav); store.set("progress", prog); stor
 const L = () => TXT[lang];
 const tr = o => (typeof o === "string" ? o : (o && (o[lang] || o.ru)) || "");
 const firstVid = t => { for (const se of t.seasons) for (const e of se.episodes) { const x = sourcesOf(e.video)[0]; if (x) return x[1]; } return ""; };
-const BUILD = "сборка 16";
+const BUILD = "сборка 17";
 function dataStamp() {
   let x = 5381; const str = TITLES.map(t => firstVidAll(t)).join("#");
   for (let i = 0; i < str.length; i++) x = ((x << 5) + x + str.charCodeAt(i)) | 0;
