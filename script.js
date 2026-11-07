@@ -70,7 +70,7 @@ const saveAll = () => { store.set("fav", fav); store.set("progress", prog); stor
 const L = () => TXT[lang];
 const tr = o => (typeof o === "string" ? o : (o && (o[lang] || o.ru)) || "");
 const firstVid = t => { for (const se of t.seasons) for (const e of se.episodes) { const x = sourcesOf(e.video)[0]; if (x) return x[1]; } return ""; };
-const BUILD = "сборка 10";
+const BUILD = "сборка 11";
 function dataStamp() {
   let x = 5381; const str = TITLES.map(t => firstVidAll(t)).join("#");
   for (let i = 0; i < str.length; i++) x = ((x << 5) + x + str.charCodeAt(i)) | 0;
@@ -128,6 +128,7 @@ function mkThumb(o) {
   const th = h("div", { class: "thumb" });
   if (o.poster) th.style.backgroundImage = 'url("' + o.poster + '")';
   else if (o.vid && /^https?:|^[\w./%-]+\.(mp4|webm|m4v)/i.test(o.vid) && !ARCH.test(o.vid)) th.append(h("video", { class: "pv", src: o.vid + "#t=6", preload: "metadata", muted: true, playsinline: true, tabindex: -1, "aria-hidden": "true" }));
+  if (!o.poster && !th.querySelector(".pv")) th.append(h("div", { class: "nophoto" }, h("b", null, "F")));
   if (o.badge) th.append(h("span", { class: "num" }, o.badge));
   if (o.isNew) th.append(h("span", { class: "new" }, L().isNew));
   if (o.rank) th.append(h("span", { class: "rank" }, o.rank));
@@ -164,7 +165,7 @@ let popId = "";
 const favBtn = t => { const on = fav.includes(t.id); return h("button", { class: "btn fav" + (on ? " on" : "") + (on && popId === t.id ? " pop" : ""), type: "button", onclick: () => { toggleFav(t.id); popId = t.id; render(); popId = ""; } }, h("span", { class: "h" }, on ? "♥" : "♡"), " " + (on ? L().inFav : L().addFav)); };
 function hero(t, detail) {
   const r = resumeFor(t.id), bg = h("div", { class: "hero-bg" });
-  if (t.poster) bg.style.backgroundImage = 'url("' + t.poster + '")';
+  if (t.poster) bg.style.backgroundImage = 'url("' + t.poster + '")'; else bg.append(h("b", { class: "hero-mark" }, "F"));
   const tr1 = detail && t.seasons[tSeason] && t.seasons[tSeason].trailer;
   return h("section", { class: "hero" }, bg, h("div", { class: "hero-in" },
     h("p", { class: "kicker" }, detail ? [kindLabel(t), t.year, tr(t.genre), t.kind === "series" ? t.seasons.length + " " + L().seasonsN : ""].filter(Boolean).join(" · ") : L().kicker),
@@ -177,14 +178,26 @@ function hero(t, detail) {
     r.fresh ? null : h("p", { class: "rinfo" }, resumeLine(t))));
 }
 
+function carousel(list) {
+  const slides = list.map((t, i) => { const e = hero(t); if (!i) e.classList.add("on"); return e; });
+  const wrap = h("div", { class: "hcar" }, slides);
+  if (list.length < 2) return wrap;
+  let cur = 0, timer = 0;
+  const dots = h("div", { class: "hdots" }, list.map((t, i) => h("button", { type: "button", class: i ? "" : "on", "aria-label": tr(t.title), onclick: () => { show(i); restart(); } })));
+  function show(i) { cur = i; slides.forEach((s, k) => s.classList.toggle("on", k === i)); [...dots.children].forEach((d, k) => d.classList.toggle("on", k === i)); }
+  function restart() { clearInterval(timer); timer = setInterval(() => { if (!document.body.contains(wrap)) return clearInterval(timer); if (!$("player").hidden || wrap.matches(":hover")) return; show((cur + 1) % list.length); }, 8000); }
+  wrap.append(dots); restart();
+  return wrap;
+}
 /* ---------- страницы ---------- */
 const byNew = list => [...list].sort((a, b) => String(b.added).localeCompare(String(a.added)));
 function viewHome() {
   const tops = TITLES.filter(t => t.top).sort((a, b) => a.top - b.top);
   const feat = tops[0] || byNew(TITLES)[0];
   const cont = Object.keys(lasts).map(T).filter(t => t && !resumeFor(t.id).fresh).sort((a, b) => lasts[b.id].ts - lasts[a.id].ts);
-  return [hero(feat), row(L().cont, cont.map(contCard)), row(L().favRow, fav.map(T).filter(Boolean).map(t => titleCard(t))),
-    row(L().topRow, tops.map((t, i) => titleCard(t, { rank: i + 1 })), "top"),
+  const feats = []; [...tops, ...byNew(TITLES)].forEach(t => { if (feats.length < 4 && !feats.includes(t)) feats.push(t); });
+  return [carousel(feats.length ? feats : [feat]), row(L().cont, cont.map(contCard)), row(L().favRow, fav.map(T).filter(Boolean).map(t => titleCard(t))),
+    row(L().topRow, tops.map((t, i) => titleCard(t, { rank: i + 1 })), "toprow"),
     h("section", { class: "row" }, h("h2", null, L().allRow), grid(byNew(TITLES).map(t => titleCard(t))))];
 }
 function viewList(kind) {
@@ -252,7 +265,7 @@ let lastKey = null;
 function render(anim) {
   document.documentElement.lang = lang;
   document.title = SITE_TITLE;
-  $("logo").textContent = SITE_TITLE;
+  $("logo").textContent = ""; $("logo").append(h("img", { src: "icon-32.png", alt: "", width: 26, height: 26 }), SITE_TITLE);
   $("lang").textContent = lang === "ru" ? "EN" : "RU";
   $("q").placeholder = L().search;
   document.querySelectorAll("[data-k]").forEach(a => { a.textContent = L()[a.dataset.k]; });

@@ -181,3 +181,29 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;ba
 .calm .card p.long{-webkit-mask-image:none;mask-image:none}
 @media (max-width:900px){.settings{max-width:100%}}
 @media (min-width:1600px){html{font-size:18px}}
+
+/* ===== сборка 11: красота ===== */
+.logo{display:flex;align-items:center;gap:10px}.logo img{border-radius:7px;box-shadow:0 0 0 1px rgba(217,180,107,.4)}
+.hcar{display:grid;position:relative;margin-bottom:30px}
+.hcar>.hero{grid-area:1/1;margin-bottom:0;opacity:0;visibility:hidden;transition:opacity .9s ease,visibility .9s}
+.hcar>.hero.on{opacity:1;visibility:visible}
+.hcar .hero-in{transition:transform .9s cubic-bezier(.2,.8,.2,1)}
+.hcar>.hero:not(.on) .hero-in{transform:translateY(14px)}
+.hdots{position:absolute;right:var(--pad);bottom:46px;display:flex;gap:8px;z-index:3}
+.hdots button{width:9px;height:9px;border-radius:99px;border:0;background:rgba(255,255,255,.28);cursor:pointer;padding:0;transition:width .35s,background .35s}
+.hdots button.on{width:30px;background:var(--gold)}
+.hero::before{content:"";position:absolute;inset:-25%;background:radial-gradient(38% 38% at 18% 30%,var(--glow2),transparent 70%),radial-gradient(34% 34% at 82% 62%,rgba(110,130,255,.16),transparent 70%);animation:aurora 16s ease-in-out infinite alternate}
+@keyframes aurora{from{transform:translate3d(-3%,-2%,0) scale(1)}to{transform:translate3d(4%,3%,0) scale(1.12)}}
+.hero-bg{animation:kb 22s ease-in-out infinite alternate;transform-origin:70% 40%}
+@keyframes kb{from{transform:scale(1)}to{transform:scale(1.07)}}
+.hero-mark{position:absolute;right:8%;top:50%;transform:translateY(-52%);font:700 clamp(220px,34vw,460px)/1 'Playfair Display',serif;background:linear-gradient(135deg,var(--gold-d),var(--gold-l));-webkit-background-clip:text;background-clip:text;color:transparent;opacity:.16;user-select:none}
+.nophoto{position:absolute;inset:0;display:grid;place-items:center;background:radial-gradient(70% 70% at 30% 20%,rgba(217,180,107,.16),transparent 70%),linear-gradient(145deg,#1b2038,#0d101c)}
+.nophoto b{font:700 clamp(56px,9vw,92px)/1 'Playfair Display',serif;background:linear-gradient(135deg,var(--gold-d),var(--gold-l));-webkit-background-clip:text;background-clip:text;color:transparent;opacity:.85}
+.card .thumb{transition:transform .4s cubic-bezier(.2,.8,.2,1),box-shadow .4s,border-color .3s}
+.card:hover .thumb,.card:focus-visible .thumb{transform:translateY(-6px) scale(1.02);box-shadow:0 22px 44px -14px var(--glow2),0 0 0 1px var(--gold)}
+.row{animation:rise .7s both}.row:nth-of-type(2){animation-delay:.06s}.row:nth-of-type(3){animation-delay:.12s}.row:nth-of-type(4){animation-delay:.18s}
+.row h2{display:flex;align-items:center;gap:12px}
+.btn{transition:transform .2s,background .2s,border-color .2s,color .2s,filter .2s}.btn:hover{transform:translateY(-2px)}.btn.main{box-shadow:0 8px 26px -10px var(--gold)}
+.calm .hero::before,.calm .hero-bg,.calm .row{animation:none}
+@media (prefers-reduced-motion:reduce){.hero::before,.hero-bg{animation:none}}
+@media (max-width:700px){.hdots{bottom:20px}.hero-mark{right:-6%;opacity:.1}}
