@@ -14,7 +14,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=20">
+<link rel="stylesheet" href="style.css?v=21">
 </head>
 <body>
 <script>
@@ -78,8 +78,17 @@ window.addEventListener("error", function (e) {
     </div>
   </div>
 </div>
-<script src="episodes.js?v=20"></script>
-<script src="catalog.js?v=20"></script>
-<script src="script.js?v=20"></script>
+<script>
+(function(){
+  if(!Element.prototype.replaceChildren){Element.prototype.replaceChildren=function(){while(this.firstChild)this.removeChild(this.firstChild);for(var i=0;i<arguments.length;i++){var n=arguments[i];this.appendChild(typeof n==="string"?document.createTextNode(n):n);}};}
+  window.addEventListener("error",function(e){
+    var a=document.getElementById("app");
+    if(a&&!a.firstChild){var d=document.createElement("div");d.style.cssText="padding:40px 20px;color:#fff;font:16px sans-serif";d.textContent="Не удалось загрузить сайт. Обновите страницу или напишите автору: "+(e.message||"");a.appendChild(d);}
+  });
+})();
+</script>
+<script src="episodes.js?v=21"></script>
+<script src="catalog.js?v=21"></script>
+<script src="script.js?v=21"></script>
 </body>
 </html>
