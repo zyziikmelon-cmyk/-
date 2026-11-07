@@ -1,11 +1,11 @@
 const TXT = {
-  ru: { vRow:"По сезонам", vAll:"Все сезоны подряд", soon:"Скоро", soonT:"Новые серии скоро появятся.", sEpView:"Вид списка серий", sEpViewH:"«Все сезоны подряд» листаются колесом мыши вниз: сезон 1, сезон 2 и так далее. «По сезонам» показывает один сезон за раз.", sSize:"Размер карточек", szS:"Мелкие", szM:"Средние", szL:"Крупные", sRad:"Скругление углов", rdS:"Острые", rdM:"Обычные", rdL:"Круглые", sFont:"Размер текста", ftS:"Меньше", ftM:"Обычный", ftL:"Крупнее", sDesc:"Описания в карточках", sDescH:"Показывать текст под названием.", sGlow:"Свечение фона", fan:"Фан-зона", fanT:"Фан-зона", fanSub:"Обсуждай серии, делись теориями и впечатлениями с другими зрителями.", fanOff:"Чат скоро откроется. Заходи позже.", fMade:"Снято в", fCast:"Герой", ru0:"", bestQ: "Какая серия понравилась больше всего?", epW: "серия", commentsT: "Комментарии", like: "Нравится", dislike: "Не нравится", howRate: "Как вам?", noVotes: "Пока нет оценок. Будьте первым", ratingT: "Рейтинг", descT: "Описание", fGenre: "Жанр", fYear: "Год", fAge: "Возраст", fCountry: "Страна", fEps: "Серий", movieW: "Фильм", toFav: "Сохранить", inFav: "В любимом", secStats: "Ваша статистика", stWatched: "Серий досмотрено", stTime: "Время просмотра", stFav: "В любимом", stMin: "мин", sBg: "Фон", bgNames: { midnight: "Полночь", graphite: "Графит", wine: "Бордо", forest: "Хвоя" }, sHero: "Автосмена афиши", sHeroHint: "Листать большую афишу на главной", secKeys: "Горячие клавиши", keysL: [["Пробел / K", "пауза"], ["← →", "перемотка на 10 секунд"], ["↑ ↓", "громкость"], ["F", "полный экран"], ["M", "без звука"], ["Esc", "закрыть плеер"]], secAbout: "О сайте", rateT: "Оцените", rateYour: "Ваша оценка", rateThanks: "Спасибо за оценку!", rateVotes: "оценок", share: "Поделиться", copied: "Ссылка скопирована", author: "Для автора", authorTool: "Разметка серии", aSrc: "Видео играет с адреса", aNow: "Сейчас", aIntroS: "Заставка: начало", aIntroE: "Заставка: конец", aCredS: "Титры: начало", aCopy: "Скопировать", aHint: "Поставь видео на нужный момент и нажми кнопку. Готовую строку вставь в episodes.js после video: {...},", aClose: "Закрыть", slowNet: "Слабое соединение: включено качество ниже", emTitle: "Серия пока недоступна", emText: "Загляни позже, мы скоро её добавим.", errTitle: "Что-то пошло не так", errText: "Не удалось загрузить видео. Возможно, сервер перегружен. Попробуй ещё раз чуть позже.", errCode: "Код ошибки", retry: "Повторить", skipCred: "Пропустить титры", secWatch: "Просмотр", secLook: "Внешний вид", secData: "Данные", sAccent: "Цвет акцента", sSpeed: "Скорость по умолчанию", sCalm: "Спокойный режим", sCalmHint: "Отключает анимации на сайте.", dub: "Озвучка", sDub: "Озвучка по умолчанию", sDubHint: "Если такой озвучки у серии нет, включится русская.", dubNames: { ru: "Русская", en: "English" }, isNew: "Новинка", seeAll: "Все результаты", home: "Главная", series: "Сериалы", movies: "Фильмы", favorites: "Любимое", search: "Поиск", settings: "Настройки", kicker: "Сейчас в кинотеатре", kSeries: "Сериал", kMovie: "Фильм", season: "Сезон", seasonsN: "сез.", ep: "серия", min: "мин", left: "Осталось", seen: "Просмотрено",
-    cont: "Продолжить просмотр", favRow: "Любимое", topRow: "Топ", allRow: "Все по новизне", play: "Смотреть", resume: "Продолжить", more: "Подробнее", addFav: "В любимое", inFav: "В любимом", trailer: "Трейлер сезона", trailerOf: "Трейлер", seasons: "Сезоны и серии",
+  ru: { vRail:"Лента серий", vGrid:"Все серии сезона", vAll:"Все сезоны подряд", seasonW:"сезон", noTrailer:"Трейлера пока нет. Мы скоро его сделаем: он появится, когда выйдут все серии первого сезона.", crumbs:1, soon:"Скоро", soonT:"Новые серии скоро появятся.", sEpView:"Вид списка серий", sEpViewH:"«Все сезоны подряд» листаются колесом мыши вниз: сезон 1, сезон 2 и так далее. «По сезонам» показывает один сезон за раз.", sSize:"Размер карточек", szS:"Мелкие", szM:"Средние", szL:"Крупные", sRad:"Скругление углов", rdS:"Острые", rdM:"Обычные", rdL:"Круглые", sFont:"Размер текста", ftS:"Меньше", ftM:"Обычный", ftL:"Крупнее", sDesc:"Описания в карточках", sDescH:"Показывать текст под названием.", sGlow:"Свечение фона", fan:"Фан-зона", fanT:"Фан-зона", fanSub:"Обсуждай серии, делись теориями и впечатлениями с другими зрителями.", fanOff:"Чат скоро откроется. Заходи позже.", fMade:"Снято в", fCast:"Герой", ru0:"", bestQ: "Какая серия понравилась больше всего?", epW: "серия", commentsT: "Комментарии", like: "Нравится", dislike: "Не нравится", howRate: "Как вам?", noVotes: "Пока нет оценок. Будьте первым", ratingT: "Рейтинг", descT: "Описание", fGenre: "Жанр", fYear: "Год", fAge: "Возраст", fCountry: "Страна", fEps: "Серий", movieW: "Фильм", toFav: "Сохранить", inFav: "В любимом", secStats: "Ваша статистика", stWatched: "Серий досмотрено", stTime: "Время просмотра", stFav: "В любимом", stMin: "мин", sBg: "Фон", bgNames: { midnight: "Полночь", graphite: "Графит", wine: "Бордо", forest: "Хвоя" }, sHero: "Автосмена афиши", sHeroHint: "Листать большую афишу на главной", secKeys: "Горячие клавиши", keysL: [["Пробел / K", "пауза"], ["← →", "перемотка на 10 секунд"], ["↑ ↓", "громкость"], ["F", "полный экран"], ["M", "без звука"], ["Esc", "закрыть плеер"]], secAbout: "О сайте", rateT: "Оцените", rateYour: "Ваша оценка", rateThanks: "Спасибо за оценку!", rateVotes: "оценок", share: "Поделиться", copied: "Ссылка скопирована", author: "Для автора", authorTool: "Разметка серии", aSrc: "Видео играет с адреса", aNow: "Сейчас", aIntroS: "Заставка: начало", aIntroE: "Заставка: конец", aCredS: "Титры: начало", aCopy: "Скопировать", aHint: "Поставь видео на нужный момент и нажми кнопку. Готовую строку вставь в episodes.js после video: {...},", aClose: "Закрыть", slowNet: "Слабое соединение: включено качество ниже", emTitle: "Серия пока недоступна", emText: "Загляни позже, мы скоро её добавим.", errTitle: "Что-то пошло не так", errText: "Не удалось загрузить видео. Возможно, сервер перегружен. Попробуй ещё раз чуть позже.", errCode: "Код ошибки", retry: "Повторить", skipCred: "Пропустить титры", secWatch: "Просмотр", secLook: "Внешний вид", secData: "Данные", sAccent: "Цвет акцента", sSpeed: "Скорость по умолчанию", sCalm: "Спокойный режим", sCalmHint: "Отключает анимации на сайте.", dub: "Озвучка", sDub: "Озвучка по умолчанию", sDubHint: "Если такой озвучки у серии нет, включится русская.", dubNames: { ru: "Русская", en: "English" }, isNew: "Новинка", seeAll: "Все результаты", home: "Главная", series: "Сериалы", movies: "Фильмы", favorites: "Любимое", search: "Поиск", settings: "Настройки", kicker: "Сейчас в кинотеатре", kSeries: "Сериал", kMovie: "Фильм", season: "Сезон", seasonsN: "сез.", ep: "серия", min: "мин", left: "Осталось", seen: "Просмотрено",
+    cont: "Продолжить просмотр", favRow: "Любимое", topRow: "Топ", allRow: "Все по новизне", play: "Смотреть", resume: "Продолжить", more: "Подробнее", addFav: "В любимое", inFav: "В любимом", trailer: "Трейлер", trailerOf: "Трейлер", seasons: "Сезоны и серии",
     noFav: "Здесь появятся сериалы и фильмы, которые ты отметишь сердечком.", noFind: "Ничего не найдено.", noList: "Пока здесь пусто.", added: "Добавлено в любимое", removed: "Убрано из любимого",
     sLang: "Язык", sQuality: "Качество по умолчанию", sQHint: "Если такого качества у видео нет, выберется ближайшее.", qMax: "Максимальное", sNext: "Автозапуск следующей серии", sSkip: "Пропускать заставку автоматически", sBackup: "Резервная копия", sBHint: "Любимое и прогресс хранятся в этом браузере. Скопируй код и вставь его на другом устройстве.", exp: "Копировать", imp: "Вставить", sReset: "История просмотра", reset: "Очистить", sure: "Очистить историю просмотра?", copied: "Код скопирован", copyThis: "Скопируй код:", pasteIt: "Вставь код:", done: "Готово", bad: "Код не подошёл",
     next: "Следующая серия", quality: "Качество", speed: "Скорость", normal: "Обычная", empty: "Видео пока не добавлено. Вставь ссылку в episodes.js или catalog.js.", skip: "Пропустить заставку", upnext: "Дальше", now: "Смотреть сейчас", cancel: "Отмена" },
-  en: { vRow:"By season", vAll:"All seasons", soon:"Coming soon", soonT:"New episodes are coming soon.", sEpView:"Episode list view", sEpViewH:"All seasons lists season 1, season 2 and so on as you scroll down. By season shows one season at a time.", sSize:"Card size", szS:"Small", szM:"Medium", szL:"Large", sRad:"Corner radius", rdS:"Sharp", rdM:"Normal", rdL:"Round", sFont:"Text size", ftS:"Smaller", ftM:"Normal", ftL:"Larger", sDesc:"Card descriptions", sDescH:"Show text under the title.", sGlow:"Background glow", fan:"Fan zone", fanT:"Fan zone", fanSub:"Talk about episodes, share theories and impressions with other viewers.", fanOff:"The chat opens soon. Come back later.", fMade:"Made in", fCast:"Hero", bestQ: "Which episode did you like the most?", epW: "episode", commentsT: "Comments", like: "Like", dislike: "Dislike", howRate: "What do you think?", noVotes: "No ratings yet. Be the first", ratingT: "Rating", descT: "Description", fGenre: "Genre", fYear: "Year", fAge: "Age", fCountry: "Country", fEps: "Episodes", movieW: "Movie", toFav: "Save", inFav: "In favorites", secStats: "Your stats", stWatched: "Episodes finished", stTime: "Watch time", stFav: "Favorites", stMin: "min", sBg: "Background", bgNames: { midnight: "Midnight", graphite: "Graphite", wine: "Burgundy", forest: "Pine" }, sHero: "Auto-rotate hero", sHeroHint: "Cycle the big banner on the home page", secKeys: "Keyboard shortcuts", keysL: [["Space / K", "play / pause"], ["← →", "seek 10 seconds"], ["↑ ↓", "volume"], ["F", "fullscreen"], ["M", "mute"], ["Esc", "close player"]], secAbout: "About", rateT: "Rate it", rateYour: "Your rating", rateThanks: "Thanks for rating!", rateVotes: "ratings", share: "Share", copied: "Link copied", author: "For the author", authorTool: "Episode markup", aSrc: "Video is playing from", aNow: "Now", aIntroS: "Intro: start", aIntroE: "Intro: end", aCredS: "Credits: start", aCopy: "Copy", aHint: "Seek to the moment and press a button. Paste the line into episodes.js after video: {...},", aClose: "Close", slowNet: "Slow connection: switched to lower quality", emTitle: "Episode not available yet", emText: "Check back later, we will add it soon.", errTitle: "Something went wrong", errText: "The video could not be loaded. The server may be overloaded. Please try again a little later.", errCode: "Error code", retry: "Retry", skipCred: "Skip credits", secWatch: "Playback", secLook: "Appearance", secData: "Data", sAccent: "Accent color", sSpeed: "Default speed", sCalm: "Calm mode", sCalmHint: "Turns off animations on the site.", dub: "Audio", sDub: "Default audio", sDubHint: "If an episode lacks this audio, Russian is used.", dubNames: { ru: "Russian", en: "English" }, isNew: "New", seeAll: "All results", home: "Home", series: "Series", movies: "Movies", favorites: "Favorites", search: "Search", settings: "Settings", kicker: "Now showing", kSeries: "Series", kMovie: "Movie", season: "Season", seasonsN: "seasons", ep: "episode", min: "min", left: "Left", seen: "Watched",
-    cont: "Continue watching", favRow: "Favorites", topRow: "Top", allRow: "All by newest", play: "Watch", resume: "Continue", more: "Details", addFav: "Favorite", inFav: "In favorites", trailer: "Season trailer", trailerOf: "Trailer", seasons: "Seasons and episodes",
+  en: { vRail:"Episode row", vGrid:"All episodes", vAll:"All seasons", seasonW:"season", noTrailer:"No trailer yet. It is coming once all episodes of season one are out.", crumbs:1, soon:"Coming soon", soonT:"New episodes are coming soon.", sEpView:"Episode list view", sEpViewH:"All seasons lists season 1, season 2 and so on as you scroll down. By season shows one season at a time.", sSize:"Card size", szS:"Small", szM:"Medium", szL:"Large", sRad:"Corner radius", rdS:"Sharp", rdM:"Normal", rdL:"Round", sFont:"Text size", ftS:"Smaller", ftM:"Normal", ftL:"Larger", sDesc:"Card descriptions", sDescH:"Show text under the title.", sGlow:"Background glow", fan:"Fan zone", fanT:"Fan zone", fanSub:"Talk about episodes, share theories and impressions with other viewers.", fanOff:"The chat opens soon. Come back later.", fMade:"Made in", fCast:"Hero", bestQ: "Which episode did you like the most?", epW: "episode", commentsT: "Comments", like: "Like", dislike: "Dislike", howRate: "What do you think?", noVotes: "No ratings yet. Be the first", ratingT: "Rating", descT: "Description", fGenre: "Genre", fYear: "Year", fAge: "Age", fCountry: "Country", fEps: "Episodes", movieW: "Movie", toFav: "Save", inFav: "In favorites", secStats: "Your stats", stWatched: "Episodes finished", stTime: "Watch time", stFav: "Favorites", stMin: "min", sBg: "Background", bgNames: { midnight: "Midnight", graphite: "Graphite", wine: "Burgundy", forest: "Pine" }, sHero: "Auto-rotate hero", sHeroHint: "Cycle the big banner on the home page", secKeys: "Keyboard shortcuts", keysL: [["Space / K", "play / pause"], ["← →", "seek 10 seconds"], ["↑ ↓", "volume"], ["F", "fullscreen"], ["M", "mute"], ["Esc", "close player"]], secAbout: "About", rateT: "Rate it", rateYour: "Your rating", rateThanks: "Thanks for rating!", rateVotes: "ratings", share: "Share", copied: "Link copied", author: "For the author", authorTool: "Episode markup", aSrc: "Video is playing from", aNow: "Now", aIntroS: "Intro: start", aIntroE: "Intro: end", aCredS: "Credits: start", aCopy: "Copy", aHint: "Seek to the moment and press a button. Paste the line into episodes.js after video: {...},", aClose: "Close", slowNet: "Slow connection: switched to lower quality", emTitle: "Episode not available yet", emText: "Check back later, we will add it soon.", errTitle: "Something went wrong", errText: "The video could not be loaded. The server may be overloaded. Please try again a little later.", errCode: "Error code", retry: "Retry", skipCred: "Skip credits", secWatch: "Playback", secLook: "Appearance", secData: "Data", sAccent: "Accent color", sSpeed: "Default speed", sCalm: "Calm mode", sCalmHint: "Turns off animations on the site.", dub: "Audio", sDub: "Default audio", sDubHint: "If an episode lacks this audio, Russian is used.", dubNames: { ru: "Russian", en: "English" }, isNew: "New", seeAll: "All results", home: "Home", series: "Series", movies: "Movies", favorites: "Favorites", search: "Search", settings: "Settings", kicker: "Now showing", kSeries: "Series", kMovie: "Movie", season: "Season", seasonsN: "seasons", ep: "episode", min: "min", left: "Left", seen: "Watched",
+    cont: "Continue watching", favRow: "Favorites", topRow: "Top", allRow: "All by newest", play: "Watch", resume: "Continue", more: "Details", addFav: "Favorite", inFav: "In favorites", trailer: "Trailer", trailerOf: "Trailer", seasons: "Seasons and episodes",
     noFav: "Series and movies you mark with a heart will appear here.", noFind: "Nothing found.", noList: "Nothing here yet.", added: "Added to favorites", removed: "Removed from favorites",
     sLang: "Language", sQuality: "Default quality", sQHint: "If a video lacks this quality, the closest one is used.", qMax: "Maximum", sNext: "Autoplay next episode", sSkip: "Skip intro automatically", sBackup: "Backup", sBHint: "Favorites and progress are stored in this browser. Copy the code and paste it on another device.", exp: "Copy", imp: "Paste", sReset: "Watch history", reset: "Clear", sure: "Clear watch history?", copied: "Code copied", copyThis: "Copy the code:", pasteIt: "Paste the code:", done: "Done", bad: "Invalid code",
     next: "Next episode", quality: "Quality", speed: "Speed", normal: "Normal", empty: "No video yet. Add a link in episodes.js or catalog.js.", skip: "Skip intro", upnext: "Up next", now: "Watch now", cancel: "Cancel" }
@@ -55,7 +55,7 @@ let fav = store.get("fav", []);
 let prog = store.get("progress", {});
 let lasts = store.get("lasts", null);
 if (!lasts) { lasts = {}; const l = store.get("last", null); if (l) lasts.main = { s: l.s, i: l.i, ts: Date.now() }; }
-let cfg = Object.assign({ quality: "720", dub: "ru", accent: "gold", speed: 1, calm: false, autonext: true, autoskip: false, bg: "midnight", heroAuto: true, epView: "all", size: "m", radius: "m", font: "m", descs: true, glow: true }, store.get("cfg", {}));
+let cfg = Object.assign({ quality: "720", dub: "ru", accent: "gold", speed: 1, calm: false, autonext: true, autoskip: false, bg: "midnight", heroAuto: true, epMode: "rail", size: "m", radius: "m", font: "m", descs: true, glow: true }, store.get("cfg", {}));
 const LITE = /SMART-?TV|Tizen|Web0S|WebOS|BRAVIA|HbbTV|NetCast|Android TV|AFT/i.test(navigator.userAgent) || (navigator.hardwareConcurrency || 8) <= 2;
 const ACCENTS = { gold: ["#d9b46b", "#a97a2c", "#f3dca4", "217,180,107"], coral: ["#ff8a6b", "#c4553a", "#ffc2b0", "255,138,107"], mint: ["#6bd9a8", "#2e9c70", "#b5f0d6", "107,217,168"], sky: ["#6bb8ff", "#2f7fc7", "#b8dcff", "107,184,255"], lilac: ["#b79bff", "#7a5ccf", "#dccfff", "183,155,255"] };
 const BGS = { midnight: ["#0a0c13", "#131726", "#232940"], graphite: ["#0e0e10", "#19191c", "#2a2a2f"], wine: ["#12080c", "#1f0f16", "#38202a"], forest: ["#07100d", "#0f1c17", "#1f3a30"] };
@@ -68,7 +68,7 @@ function applyTheme() {
   document.documentElement.classList.toggle("calm", !!cfg.calm || LITE);
   const rt = document.documentElement.classList;
   rt.toggle("nodesc", !cfg.descs); rt.toggle("noglow", !cfg.glow);
-  ["s", "m", "l"].forEach(k => { rt.toggle("sz-" + k, cfg.size === k); rt.toggle("rd-" + k, cfg.radius === k); rt.toggle("ft-" + k, cfg.font === k); });
+  ["s", "m", "l"].forEach(k => rt.toggle("ft-" + k, cfg.font === k));
 }
 let active = null, lastSave = 0, hideT = 0, menuOpen = false, rate = 1, dragging = false, wasIdle = false, tSeason = 0, lastTitle = "";
 let UP_LEAD = 20, emptyKind = "none";
@@ -162,30 +162,18 @@ function epCard(t, si, i) {
   const meta = watched(p) ? L().seen : started(p) ? leftText(p) : (mins ? mins + " " + L().min : "");
   return card(mkThumb({ poster: e.poster || (t.kind === "movie" ? t.poster : ""), vid: (sourcesOf(e.video)[0] || [])[1], badge: i + 1, p, meta }), (i + 1) + " " + L().ep + ": " + tr(e.title), tr(e.desc), () => playEpisode(t.id, si, i), i * 60);
 }
+function railWrap(sc) {
+  const mk = d => { const b = h("button", { class: "arr " + (d < 0 ? "l" : "r"), type: "button", "aria-label": d < 0 ? "Back" : "Next", onclick: () => sc.scrollBy({ left: d * sc.clientWidth * 0.85, behavior: "smooth" }) }); b.innerHTML = '<svg viewBox="0 0 24 24" width="24" height="24"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>'; return b; };
+  const l = mk(-1), r = mk(1);
+  const upd = () => { const max = sc.scrollWidth - sc.clientWidth; l.classList.toggle("off", sc.scrollLeft < 4); r.classList.toggle("off", max < 6 || sc.scrollLeft > max - 4); };
+  sc.addEventListener("scroll", upd, { passive: true });
+  [0, 120, 600].forEach(ms => setTimeout(upd, ms)); window.addEventListener("resize", upd);
+  return h("div", { class: "rwrap" }, l, sc, r);
+}
 const row = (title, cards, cls) => {
   if (!cards.length) return null;
-  const sc = h("div", { class: "scroller" }, cards); wheelRail(sc);
-  const arr = d => h("button", { class: "arr " + (d < 0 ? "l" : "r"), type: "button", "aria-label": d < 0 ? "Back" : "Next", onclick: () => sc.scrollBy({ left: d * sc.clientWidth * 0.8, behavior: "smooth" }) }, d < 0 ? "‹" : "›");
-  return h("section", { class: "row " + (cls || "") }, h("h2", null, title), h("div", { class: "rwrap" }, arr(-1), sc, arr(1)));
+  return h("section", { class: "row " + (cls || "") }, h("h2", null, title), railWrap(h("div", { class: "scroller" }, cards)));
 };
-function wheelRail(sc) {
-  let target = 0, raf = 0;
-  const step = () => {
-    const d = target - sc.scrollLeft;
-    if (Math.abs(d) < 0.6) { sc.scrollLeft = target; raf = 0; return; }
-    sc.scrollLeft += d * 0.16; raf = requestAnimationFrame(step);
-  };
-  sc.addEventListener("wheel", e => {
-    if (e.ctrlKey || Math.abs(e.deltaY) < Math.abs(e.deltaX)) return;
-    const max = sc.scrollWidth - sc.clientWidth, base = raf ? target : sc.scrollLeft;
-    if ((e.deltaY > 0 && base >= max - 1) || (e.deltaY < 0 && base <= 0)) return;
-    e.preventDefault();
-    const dy = e.deltaMode === 1 ? e.deltaY * 32 : e.deltaY;
-    target = Math.max(0, Math.min(max, base + dy * 1.1));
-    if (!raf) raf = requestAnimationFrame(step);
-  }, { passive: false });
-  sc.addEventListener("touchstart", () => { raf = 0; }, { passive: true });
-}
 const grid = list => h("div", { class: "grid" }, list);
 let popId = "";
 const favBtn = t => { const on = fav.includes(t.id); return h("button", { class: "btn fav" + (on ? " on" : "") + (on && popId === t.id ? " pop" : ""), type: "button", onclick: () => { toggleFav(t.id); popId = t.id; render(); popId = ""; } }, h("span", { class: "h" }, on ? "♥" : "♡"), " " + (on ? L().inFav : L().addFav)); };
@@ -249,10 +237,12 @@ function detailHero(t) {
   const meta2 = [tr(t.genre) !== kindLabel(t) ? tr(t.genre) : "", t.country ? tr(t.country) : ""].filter(Boolean);
   const play = h("button", { class: "bigplay", type: "button", onclick: () => playResume(t.id) }, h("span", { class: "pi" }), r.fresh ? L().play : L().resume);
   play.firstChild.innerHTML = SVG.play;
-  const tb = trl ? h("button", { class: "ghost", type: "button", onclick: () => playTrailer(t.id) }, h("span", { class: "pi" }), L().trailer) : null;
-  if (tb) tb.firstChild.innerHTML = SVG.film;
+  const tb = h("button", { class: "ghost", type: "button", onclick: () => trl ? playTrailer(t.id) : toast(L().noTrailer) }, h("span", { class: "pi" }), L().trailer);
+  tb.firstChild.innerHTML = SVG.film;
+  const crumbs = h("nav", { class: "crumbs" }, h("a", { href: "#home" }, L().home), h("i", null, "›"), h("a", { href: t.kind === "series" ? "#series" : "#movies" }, t.kind === "series" ? L().series : L().movies), h("i", null, "›"), h("span", null, tr(t.title)));
+  const bp = h("button", { class: "hbig", type: "button", "aria-label": L().play, onclick: () => playResume(t.id) }); bp.innerHTML = SVG.play;
   const on = fav.includes(t.id);
-  return h("section", { class: "hero detail" }, bg, h("div", { class: "hero-in" },
+  return h("section", { class: "hero detail" }, bg, bp, crumbs, h("div", { class: "hero-in" },
     h("h1", null, tr(t.title)), h("p", { class: "lead" }, tr(t.desc)),
     h("div", { class: "dmeta" }, scoreChip(t), meta.map(m => h("span", null, m))),
     meta2.length ? h("div", { class: "dmeta2" }, meta2.join(" · ")) : null,
@@ -373,22 +363,32 @@ function viewSearch() {
   return h("section", { class: "page" }, h("h2", null, L().search + (q ? ": " + $("q").value.trim() : "")), res.length ? grid(res.map(t => titleCard(t))) : h("p", { class: "none" }, L().noFind));
 }
 const vcol = list => h("div", { class: "vlist" }, list);
-const hrail = list => { const sc = h("div", { class: "scroller eprail" }, list); wheelRail(sc); return sc; };
+const hrail = list => railWrap(h("div", { class: "scroller eprail" }, list));
+let ddOpen = false;
 function epView(t) {
-  const all = cfg.epView !== "row";
+  const mode = ["rail", "grid", "all"].includes(cfg.epMode) ? cfg.epMode : "rail";
   const mk = si => t.seasons[si].episodes.map((e, i) => epCard(t, si, i));
-  const seg = h("div", { class: "seg" }, [["all", L().vAll], ["row", L().vRow]].map(([k, l]) => h("button", { type: "button", "aria-pressed": (k === "all") === all, onclick: () => { cfg.epView = k; saveAll(); render(true); } }, l)));
+  const names = { rail: L().vRail, grid: L().vGrid, all: L().vAll };
+  const setMode = k => { cfg.epMode = k; ddOpen = false; saveAll(); render(true); };
+  const chev = '<svg viewBox="0 0 24 24" width="18" height="18"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  const dd = h("button", { class: "dd" + (ddOpen ? " open" : ""), type: "button", "aria-expanded": ddOpen, onclick: e => { e.stopPropagation(); ddOpen = !ddOpen; render(true); } }, names[mode], h("i"));
+  dd.lastChild.innerHTML = chev;
+  const menu = ddOpen ? h("div", { class: "ddm" }, ["rail", "grid", "all"].map(k => h("button", { type: "button", class: k === mode ? "on" : "", onclick: e => { e.stopPropagation(); setMode(k); } }, names[k]))) : null;
+  const head = h("div", { class: "eph" }, h("h2", null, L().seasons), h("div", { class: "ddw" }, dd, menu));
   const body = [];
-  if (all) {
+  if (mode === "all") {
     t.seasons.forEach((s, si) => {
       const ready = s.episodes.some(e => sourcesOf(e.video).length);
-      body.push(h("div", { class: "sblock" + (ready ? "" : " soon") }, h("h3", { class: "stitle" }, L().season + " " + (si + 1), ready ? null : h("span", null, L().soon)), ready ? grid(mk(si)) : h("p", { class: "soonp" }, L().soonT)));
+      body.push(h("div", { class: "sblock" + (ready ? "" : " soon") }, h("h3", { class: "stitle" }, (si + 1) + " " + L().seasonW, ready ? null : h("span", null, L().soon)), ready ? grid(mk(si)) : h("p", { class: "soonp" }, L().soonT)));
     });
   } else {
-    body.push(h("div", { class: "seasons" }, t.seasons.map((s, i) => h("button", { type: "button", "aria-pressed": i === tSeason, onclick: () => { tSeason = i; render(true); } }, L().season + " " + (i + 1)))), hrail(mk(tSeason)));
+    if (t.seasons.length > 1) body.push(h("div", { class: "seasons" }, t.seasons.map((s, i) => h("button", { type: "button", "aria-pressed": i === tSeason, onclick: () => { tSeason = i; render(true); } }, i === tSeason ? (i + 1) + " " + L().seasonW : String(i + 1)))));
+    const ready = t.seasons[tSeason].episodes.some(e => sourcesOf(e.video).length);
+    body.push(ready ? (mode === "grid" ? grid(mk(tSeason)) : hrail(mk(tSeason))) : h("p", { class: "soonp" }, L().soonT));
   }
-  return h("div", { class: "epview" }, seg, body);
+  return h("div", { class: "epview" }, head, body);
 }
+document.addEventListener("click", () => { if (ddOpen) { ddOpen = false; const m = document.querySelector(".ddm"); if (m) m.remove(); const d = document.querySelector(".dd"); if (d) { d.classList.remove("open"); d.setAttribute("aria-expanded", "false"); } } });
 function viewTitle(id) {
   const t = T(id);
   if (!t) return h("section", { class: "page" }, h("p", { class: "none" }, L().noList));
@@ -396,7 +396,7 @@ function viewTitle(id) {
   if (!t.seasons[tSeason]) tSeason = 0;
   const out = [hero(t, true)];
   if (t.kind === "series") {
-    out.push(h("section", { class: "page", id: "sec-eps", style: "padding-top:0" }, h("h2", null, L().seasons),
+    out.push(h("section", { class: "page", id: "sec-eps", style: "padding-top:0" },
       epView(t)));
   }
   out.push(descSection(t), commentsSection(t), tabBar(t));
@@ -425,9 +425,6 @@ function viewSettings() {
     r(L().sLang, null, sel([["ru", "Русский"], ["en", "English"]], lang, x => { lang = x; store.set("lang", lang); render(); })),
     r(L().sAccent, null, dots),
     r(L().sBg, null, bgs),
-    r(L().sEpView, L().sEpViewH, sel([["row", L().vRow], ["all", L().vAll]], cfg.epView, x => { cfg.epView = x; saveAll(); })),
-    r(L().sSize, null, sel([["s", L().szS], ["m", L().szM], ["l", L().szL]], cfg.size, x => { cfg.size = x; saveAll(); applyTheme(); })),
-    r(L().sRad, null, sel([["s", L().rdS], ["m", L().rdM], ["l", L().rdL]], cfg.radius, x => { cfg.radius = x; saveAll(); applyTheme(); })),
     r(L().sFont, null, sel([["s", L().ftS], ["m", L().ftM], ["l", L().ftL]], cfg.font, x => { cfg.font = x; saveAll(); applyTheme(); })),
     r(L().sDesc, L().sDescH, sw("descs")),
     r(L().sGlow, null, sw("glow")),
@@ -480,6 +477,7 @@ function render(anim) {
 }
 let revObs = null;
 function revealInit() {
+  return;
   if (!("IntersectionObserver" in window) || cfg.calm || LITE) return;
   if (revObs) revObs.disconnect();
   revObs = new IntersectionObserver(es => es.forEach(en => { if (en.isIntersecting) { en.target.classList.add("in"); revObs.unobserve(en.target); } }), { threshold: 0.08, rootMargin: "0px 0px -6% 0px" });

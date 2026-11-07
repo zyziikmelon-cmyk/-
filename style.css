@@ -363,7 +363,6 @@ html.ft-s{zoom:.92}html.ft-l{zoom:1.1}
 .eprail .card.rv{transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
 
 /* build 30 */
-.arr{display:none!important}
 .ibtn{position:relative}
 .ibtn.pop svg{animation:heartpop .7s cubic-bezier(.2,1.6,.4,1)}
 .ibtn.pop::after{content:"";position:absolute;left:50%;top:50%;width:26px;height:26px;margin:-13px;border-radius:50%;border:2px solid var(--gold);animation:ring .7s ease-out forwards;pointer-events:none}
@@ -384,3 +383,33 @@ html.ft-s{zoom:.92}html.ft-l{zoom:1.1}
 .scroller::-webkit-scrollbar{display:none;width:0;height:0}
 .eprail{scroll-snap-type:none}
 .spin{width:64px;height:64px;margin:-32px;border:0;border-radius:50%;background:conic-gradient(from 0deg,rgba(255,255,255,0) 0%,var(--gold) 100%);-webkit-mask:radial-gradient(farthest-side,transparent calc(100% - 5px),#000 calc(100% - 4px));mask:radial-gradient(farthest-side,transparent calc(100% - 5px),#000 calc(100% - 4px));animation:spinr 1.05s cubic-bezier(.45,.15,.55,.85) infinite}
+
+/* build 32: селектор сезонов, стрелки, герой как на Старте, спокойные анимации */
+.rwrap .arr{top:calc(50% - 56px);width:48px;height:48px;border:0;border-radius:50%;background:rgba(10,12,19,.72);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);display:grid;place-items:center;padding:0;opacity:0;transition:opacity .3s ease,background .25s ease,color .25s ease}
+.rwrap .arr.l{left:6px}.rwrap .arr.r{right:6px}
+.rwrap .arr.l svg{transform:scaleX(-1)}
+.rwrap:hover .arr{opacity:1}
+.rwrap .arr.off,.rwrap:hover .arr.off{opacity:0;pointer-events:none}
+.rwrap .arr:hover{background:rgba(10,12,19,.92);color:var(--gold)}
+@media (hover:none){.rwrap .arr{display:none}}
+.eph{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:18px;position:relative;z-index:4}
+.eph h2{margin:0}
+.ddw{position:relative}
+.dd{display:inline-flex;align-items:center;gap:8px;background:var(--panel);color:var(--mute);border:1px solid var(--line);border-radius:10px;padding:9px 12px 9px 16px;font:inherit;font-size:15px;cursor:pointer;transition:color .25s,border-color .25s}
+.dd:hover,.dd.open{color:var(--text);border-color:var(--mute)}
+.dd i{display:grid;transition:transform .3s ease}.dd.open i{transform:rotate(180deg)}
+.ddm{position:absolute;left:0;top:calc(100% + 8px);min-width:220px;background:rgba(19,23,38,.98);border:1px solid var(--line);border-radius:12px;padding:6px;box-shadow:0 18px 40px -16px #000;animation:pgin .25s ease both}
+.ddm button{display:block;width:100%;text-align:left;background:none;border:0;color:var(--text);font:inherit;font-size:15px;padding:10px 12px;border-radius:8px;cursor:pointer;transition:background .2s}
+.ddm button:hover{background:rgba(255,255,255,.07)}.ddm button.on{color:var(--gold)}
+.seasons{gap:10px;margin:0 0 22px}
+.seasons button{min-width:62px;height:54px;padding:0 20px;border-radius:12px;font-weight:700;font-size:17px;display:inline-flex;align-items:center;justify-content:center}
+.crumbs{position:absolute;left:var(--pad);top:26px;z-index:2;display:flex;align-items:center;gap:10px;font-size:13px;color:var(--mute)}
+.crumbs a{color:var(--mute);transition:color .2s}.crumbs a:hover{color:var(--text)}.crumbs i{font-style:normal;opacity:.6}.crumbs span{color:var(--text)}
+.hbig{position:absolute;z-index:2;right:22%;top:50%;width:150px;height:150px;margin-top:-75px;border-radius:50%;border:0;cursor:pointer;background:rgba(255,255,255,.92);color:var(--gold-d);display:grid;place-items:center;transition:background .3s ease,box-shadow .3s ease}
+.hbig svg{width:56px;height:56px;margin-left:6px}
+.hbig:hover{background:#fff;box-shadow:0 0 0 10px rgba(255,255,255,.12)}
+@media (max-width:860px){.hbig{width:84px;height:84px;margin-top:-42px;right:8%}.hbig svg{width:34px;height:34px}.crumbs{top:16px}}
+/* спокойные анимации */
+.rv,.rv.in{opacity:1!important;transform:none!important;transition:none!important}
+.card{animation:pgin .45s ease both}
+@keyframes rise{from{opacity:0}to{opacity:1}}
