@@ -288,3 +288,15 @@ kbd{font:500 12px/1 ui-monospace,monospace;color:var(--text);background:var(--pa
 .tabbar .tp{background:var(--gold);color:#1c1608;text-transform:uppercase;letter-spacing:.05em;font-weight:800;padding:12px 22px;border-radius:14px}
 .tabbar .tp:hover{background:var(--gold-l);color:#1c1608}
 @media (max-width:860px){.dsec{grid-template-columns:1fr}.tabbar button:not(.tp){display:none}.tabbar i{display:none}.tabbar{padding:8px}.hero.detail{min-height:62vh}.bigplay,.ghost,.ibtn{height:54px}.ibtn{width:54px}.bigplay{padding:0 22px}}
+
+/* ===== сборка 16 ===== */
+.best{margin-top:22px}.best h3{font:700 18px Onest,sans-serif;margin-bottom:12px}
+.blist{display:grid;gap:8px}
+.brow{position:relative;display:flex;justify-content:space-between;align-items:center;gap:12px;text-align:left;border:1px solid var(--line);background:rgba(255,255,255,.04);color:var(--text);border-radius:12px;padding:12px 14px;font:500 14px Onest,sans-serif;cursor:pointer;overflow:hidden;transition:border-color .2s,transform .2s}
+.brow i{position:absolute;inset:0 auto 0 0;background:linear-gradient(90deg,rgba(217,180,107,.22),rgba(217,180,107,.06));transition:width .8s cubic-bezier(.2,.8,.2,1)}
+.brow span,.brow em{position:relative;font-style:normal}.brow em{color:var(--gold-l);font-weight:700}
+.brow:hover:not(:disabled){transform:translateX(3px);border-color:var(--gold)}
+.brow.on{border-color:var(--gold)}.brow.top span:before{content:"★ ";color:var(--gold)}
+.brow:disabled{cursor:default;opacity:.85}
+.csec{padding-bottom:120px;max-width:1000px;scroll-margin-top:80px}.csec h2{font:700 30px 'Playfair Display',serif;margin-bottom:18px}
+.tb:not(.pl) .toast{bottom:96px}

@@ -14,3 +14,7 @@ const EXTRA_TITLES = [
   // { id: "serial-2", title: { ru: "Название", en: "Title" }, desc: { ru: "Описание", en: "Description" }, genre: { ru: "Драма", en: "Drama" }, year: 2026, added: "2026-12-02", poster: "",
   //   seasons: [ { episodes: [ { title: { ru: "Серия 1", en: "Episode 1" }, desc: { ru: "Описание", en: "Description" }, video: { "1080": "ссылка-на-видео" } } ] } ] },
 ];
+
+// ===== КОММЕНТАРИИ (через Giscus, бесплатно) =====
+// Включатся, когда в categoryId появится значение. Инструкция - у Claude в чате.
+const GISCUS = { repo: "zyziikmelon-cmyk/-", repoId: "R_kgDOViz89g", category: "General", categoryId: "" };
