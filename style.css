@@ -300,3 +300,7 @@ kbd{font:500 12px/1 ui-monospace,monospace;color:var(--text);background:var(--pa
 .brow:disabled{cursor:default;opacity:.85}
 .csec{padding-bottom:120px;max-width:1000px;scroll-margin-top:80px}.csec h2{font:700 30px 'Playfair Display',serif;margin-bottom:18px}
 .tb:not(.pl) .toast{bottom:96px}
+.tagl{font-size:clamp(20px,2.4vw,28px);font-weight:700;line-height:1.25;margin:0 0 14px;background:linear-gradient(90deg,var(--ac,#d9b46b),#fff);-webkit-background-clip:text;background-clip:text;color:transparent}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}
+.tags span{padding:6px 14px;border-radius:999px;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.05);font-size:13px;letter-spacing:.02em}
+.fanhead{padding-top:36px}.fanhead h1{margin:0 0 8px}.fanhead p{opacity:.7;margin:0}

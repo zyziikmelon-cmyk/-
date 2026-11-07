@@ -1,7 +1,11 @@
 // ===== КАТАЛОГ: здесь ты добавляешь новые сериалы и фильмы =====
 // Описание твоего главного сериала (сам сериал и серии остаются в episodes.js).
 // top: 1 - место в «Топе» (убери строку top, если не нужен).
-const MAIN_META = { genre: { ru: "Сериал", en: "Series" }, year: 2026, added: "2026-11-04", top: 1, age: "18+" };
+const MAIN_META = { genre: { ru: "Сериал", en: "Series" }, year: 2026, added: "2026-11-04", top: 1, age: "18+",
+  tagline: { ru: "Один день здесь длиннее, чем целая жизнь снаружи.", en: "One day in here is longer than a whole life outside." },
+  story: { ru: "Здесь у каждого своя игра, у каждой улыбки своя цена, а двор, на который выходят окна камер, хранит больше тайн, чем кажется. Сериал снят в Newton Playground на VR: мрачный юмор, неожиданные повороты и герои, которых невозможно забыть.", en: "Everyone here plays their own game, every smile has its price, and the yard under the cell windows keeps more secrets than it seems. Shot in Newton Playground in VR: dark humour, unexpected turns and heroes you cannot forget." },
+  tags: [{ ru: "Тюрьма", en: "Prison" }, { ru: "Чёрный юмор", en: "Dark humour" }, { ru: "Интрига", en: "Intrigue" }, { ru: "VR-кино", en: "VR cinema" }],
+  made: { ru: "Newton Playground (VR)", en: "Newton Playground (VR)" }, cast: { ru: "Федор", en: "Fyodor" } };
 // age - возраст (например "18+"), country - страна: country: { ru: "Россия", en: "Russia" }. Оба необязательные, можно удалить.
 
 // Новые сериалы и фильмы добавляй сюда: скопируй пример, раскомментируй (убери //) и поменяй.
