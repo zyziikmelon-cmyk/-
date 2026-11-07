@@ -70,7 +70,7 @@ const saveAll = () => { store.set("fav", fav); store.set("progress", prog); stor
 const L = () => TXT[lang];
 const tr = o => (typeof o === "string" ? o : (o && (o[lang] || o.ru)) || "");
 const firstVid = t => { for (const se of t.seasons) for (const e of se.episodes) { const x = sourcesOf(e.video)[0]; if (x) return x[1]; } return ""; };
-const BUILD = "сборка 11";
+const BUILD = "сборка 12";
 function dataStamp() {
   let x = 5381; const str = TITLES.map(t => firstVidAll(t)).join("#");
   for (let i = 0; i < str.length; i++) x = ((x << 5) + x + str.charCodeAt(i)) | 0;
@@ -297,14 +297,16 @@ const ARCH = /^https?:\/\/archive\.org\/details\/([^/?#]+)/i, resolved = {};
 async function resolveUrl(u) {
   const m = ARCH.exec(u);
   if (!m) return u;
-  if (resolved[m[1]]) return resolved[m[1]];
+  const qm = /#(?:q=)?(\d+)/.exec(u), q = qm ? qm[1] : "", key = m[1] + "|" + q;
+  if (resolved[key]) return resolved[key];
   try {
     const d = await (await fetch("https://archive.org/metadata/" + m[1])).json();
-    const fs = (d.files || []).filter(f => /\.(mp4|m4v|webm|mov)$/i.test(f.name));
+    let fs = (d.files || []).filter(f => /\.(mp4|m4v|webm|mov)$/i.test(f.name));
     const byBig = (a, b) => (+b.size || 0) - (+a.size || 0);
+    if (q) { const named = fs.filter(f => new RegExp("(^|[^0-9])" + q + "([^0-9]|$)").test(f.name.split("/").pop())); if (named.length) fs = named; }
     const orig = fs.filter(x => x.source === "original").sort(byBig);
     const f = orig[0] || fs.sort(byBig)[0];
-    if (f) return (resolved[m[1]] = "https://archive.org/download/" + m[1] + "/" + f.name.split("/").map(encodeURIComponent).join("/"));
+    if (f) return (resolved[key] = "https://archive.org/download/" + m[1] + "/" + f.name.split("/").map(encodeURIComponent).join("/"));
   } catch (e) {}
   return u;
 }
