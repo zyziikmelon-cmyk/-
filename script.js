@@ -355,7 +355,11 @@ function viewSearch() {
   const res = q ? TITLES.filter(t => textOf(t).includes(q)) : TITLES;
   return h("section", { class: "page" }, h("h2", null, L().search + (q ? ": " + $("q").value.trim() : "")), res.length ? grid(res.map(t => titleCard(t))) : h("p", { class: "none" }, L().noFind));
 }
-const vlist = list => h("div", { class: "vlist" }, list);
+const vlist = list => {
+  const sc = h("div", { class: "scroller eprail" }, list); wheelRail(sc);
+  const arr = d => h("button", { class: "arr " + (d < 0 ? "l" : "r"), type: "button", "aria-label": d < 0 ? "Back" : "Next", onclick: () => sc.scrollBy({ left: d * sc.clientWidth * 0.8, behavior: "smooth" }) }, d < 0 ? "‹" : "›");
+  return h("div", { class: "rwrap" }, arr(-1), sc, arr(1));
+};
 function epView(t) {
   const all = cfg.epView !== "row";
   const mk = si => t.seasons[si].episodes.map((e, i) => epCard(t, si, i));
@@ -465,7 +469,7 @@ function revealInit() {
   if (!("IntersectionObserver" in window) || cfg.calm || LITE) return;
   if (revObs) revObs.disconnect();
   revObs = new IntersectionObserver(es => es.forEach(en => { if (en.isIntersecting) { en.target.classList.add("in"); revObs.unobserve(en.target); } }), { threshold: 0.08, rootMargin: "0px 0px -6% 0px" });
-  const els = document.querySelectorAll(".vlist .card, .dsec > div, .csec, .stitle, .tags, .facts > div, .stats .tile, .srow, .best .brow");
+  const els = document.querySelectorAll(".eprail .card, .dsec > div, .csec, .stitle, .tags, .facts > div, .stats .tile, .srow, .best .brow");
   els.forEach((el, i) => { el.classList.add("rv"); el.style.transitionDelay = Math.min((i % 6) * 60, 300) + "ms"; revObs.observe(el); });
 }
 

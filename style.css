@@ -356,3 +356,8 @@ html.ft-s{zoom:.92}html.ft-l{zoom:1.1}
 .brow,.facts>div{transition:background .25s}
 .calm #app>*{animation:none}
 @media (max-width:480px){.q{width:96px}.lang{padding:6px 8px;font-size:14px}.top{gap:6px 8px;padding-left:14px;padding-right:14px}.logo{font-size:14px}.logo img{width:22px;height:22px}}
+
+/* build 29: серии горизонтальной лентой */
+.eprail{scroll-snap-type:x proximity;padding-bottom:14px}
+.eprail .card{flex:0 0 min(var(--cw),74vw)}
+.eprail .card.rv{transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
