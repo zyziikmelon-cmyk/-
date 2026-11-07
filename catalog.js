@@ -9,9 +9,12 @@ const MAIN_META = { genre: { ru: "Сериал", en: "Series" }, year: 2026, add
 // age - возраст (например "18+"), country - страна: country: { ru: "Россия", en: "Russia" }. Оба необязательные, можно удалить.
 
 // Новые сериалы и фильмы добавляй сюда: скопируй пример, раскомментируй (убери //) и поменяй.
+// Для красивой страницы можно добавить: tagline (слоган), story (длинное описание), tags (теги), made (где снято), cast (герой). Если не добавить, теги и факты подставятся сами.
 // id - только латинские буквы, цифры и дефис. added - дата добавления (по ней сортировка «по новизне»).
 const EXTRA_TITLES = [
-  { id: "golda", title: { ru: "Голда", en: "Golda" }, desc: { ru: "Короткий мультфильм про золотую монету, за которой охотятся все вокруг. Каждому она нужна по своей причине.", en: "A short cartoon about a golden coin that everyone around wants. Everyone has their own reason." }, genre: { ru: "Мультфильм", en: "Cartoon" }, year: 2026, added: "2026-11-07", top: 2, poster: "golda-poster.jpg", video: { "720": "golda.mp4" } },
+  { id: "golda", title: { ru: "Голда", en: "Golda" }, desc: { ru: "Короткий мультфильм про золотую монету, за которой охотятся все вокруг. Каждому она нужна по своей причине.", en: "A short cartoon about a golden coin that everyone around wants. Everyone has their own reason." }, genre: { ru: "Мультфильм", en: "Cartoon" }, year: 2026, added: "2026-11-07", top: 2, age: "12+", tagline: { ru: "Одна монета. Тысяча желаний.", en: "One coin. A thousand wishes." },
+    story: { ru: "Золото меняет всех, кто к нему прикасается. Забавная и немного грустная история о том, как далеко люди готовы зайти ради блестящей монеты.", en: "Gold changes everyone who touches it. A funny and slightly sad story about how far people will go for a shiny coin." },
+    tags: [{ ru: "Мультфильм", en: "Cartoon" }, { ru: "Короткометражка", en: "Short film" }, { ru: "Притча", en: "Parable" }], made: { ru: "Newton Playground (VR)", en: "Newton Playground (VR)" }, poster: "golda-poster.jpg", video: { "720": "golda.mp4" } },
   // Пример фильма:
   // { id: "film-1", title: { ru: "Название", en: "Title" }, desc: { ru: "Описание", en: "Description" }, genre: { ru: "Комедия", en: "Comedy" }, year: 2026, added: "2026-12-01", poster: "", video: { "1080": "ссылка-на-видео" } },
   // Пример сериала:

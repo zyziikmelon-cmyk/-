@@ -273,11 +273,15 @@ function viewFan() {
   const g = giscusBox("fidorium-fanzone", L().fanT, "sec-fan");
   return [h("section", { class: "page fanhead" }, h("h1", null, L().fanT), h("p", null, L().fanSub)), g || h("section", { class: "page csec" }, h("p", { class: "dtext" }, L().fanOff))];
 }
+function autoTags(t) {
+  const a = t.tags ? t.tags.map(x => tr(x)) : [tr(t.genre), t.kind === "series" ? t.seasons.length + " " + (L().seasons || "").toLowerCase() : "", t.age || "", t.year ? String(t.year) : "", t.country ? tr(t.country) : ""];
+  return a.filter((x, i) => x && a.indexOf(x) === i);
+}
 function descSection(t) {
   const eps = t.seasons.reduce((a, s) => a + s.episodes.filter(e => sourcesOf(e.video).length).length, 0);
   const rows = [[L().fGenre, tr(t.genre)], [L().fYear, t.year], [L().fAge, t.age], [L().fCountry, t.country ? tr(t.country) : ""], [t.made ? L().fMade : "", t.made ? tr(t.made) : ""], [t.cast ? L().fCast : "", t.cast ? tr(t.cast) : ""], [t.kind === "series" ? L().fEps : "", t.kind === "series" ? eps : ""]].filter(x => x[0] && x[1]);
   return h("section", { class: "page dsec", id: "sec-desc" },
-    h("div", { class: "dcol" }, h("h2", null, L().descT), t.tagline ? h("p", { class: "tagl" }, tr(t.tagline)) : null, h("p", { class: "dtext" }, tr(t.desc)), t.story ? h("p", { class: "dtext" }, tr(t.story)) : null, t.tags ? h("div", { class: "tags" }, t.tags.map(x => h("span", null, tr(x)))) : null, h("div", { class: "facts" }, rows.map(([k, v]) => h("div", null, h("span", null, k), h("b", null, v))))),
+    h("div", { class: "dcol" }, h("h2", null, L().descT), t.tagline ? h("p", { class: "tagl" }, tr(t.tagline)) : null, h("p", { class: "dtext" }, tr(t.desc)), t.story ? h("p", { class: "dtext" }, tr(t.story)) : null, h("div", { class: "tags" }, autoTags(t).map(x => h("span", null, x))), h("div", { class: "facts" }, rows.map(([k, v]) => h("div", null, h("span", null, k), h("b", null, v))))),
     h("div", { class: "rcol" }, h("h2", null, L().ratingT), ratePanel(t), bestEpisode(t)));
 }
 function tabBar(t) {
