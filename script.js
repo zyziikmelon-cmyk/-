@@ -196,6 +196,8 @@ const scoreCls = x => x == null ? "" : x >= 7 ? "good" : x >= 5 ? "mid" : "bad";
 const SVG = {
   up: '<svg viewBox="0 0 24 24" width="22" height="22"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M7 10v10H4V10h3zm0 0l4-7c1.5 0 2.4 1 2.1 2.5L12.5 9H19a2 2 0 0 1 2 2.4l-1.3 6.5A2 2 0 0 1 17.8 19H7"/></svg>',
   down: '<svg viewBox="0 0 24 24" width="22" height="22" style="transform:scaleY(-1)"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M7 10v10H4V10h3zm0 0l4-7c1.5 0 2.4 1 2.1 2.5L12.5 9H19a2 2 0 0 1 2 2.4l-1.3 6.5A2 2 0 0 1 17.8 19H7"/></svg>',
+  heart: '<svg viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.7 4.5 6.4 4.5c2.1 0 3.8 1.1 5.6 3.2 1.8-2.1 3.5-3.2 5.6-3.2 3.7 0 5.5 3.9 4 7.3C19.5 16.4 12 21 12 21z"/></svg>',
+  heartO: '<svg viewBox="0 0 24 24" width="24" height="24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.7 4.5 6.4 4.5c2.1 0 3.8 1.1 5.6 3.2 1.8-2.1 3.5-3.2 5.6-3.2 3.7 0 5.5 3.9 4 7.3C19.5 16.4 12 21 12 21z"/></svg>',
   mark: '<svg viewBox="0 0 24 24" width="22" height="22"><path fill="currentColor" d="M6 3h12a1 1 0 0 1 1 1v17l-7-4.5L5 21V4a1 1 0 0 1 1-1z"/></svg>',
   markO: '<svg viewBox="0 0 24 24" width="22" height="22"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M6 3h12a1 1 0 0 1 1 1v17l-7-4.5L5 21V4a1 1 0 0 1 1-1z"/></svg>',
   share: '<svg viewBox="0 0 24 24" width="22" height="22"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M12 15V3m0 0L8 7m4-4l4 4M5 12v8h14v-8"/></svg>',
@@ -223,6 +225,11 @@ function ratePanel(t) {
   build(); paint(); votesGet(t.id).then(paint);
   return h("div", { class: "ratep" }, big, h("div", { class: "rq" }, h("b", null, L().howRate), sub), btns);
 }
+function favIcon(t, on) {
+  const b = iconBtn(on ? SVG.heart : SVG.heartO, on ? L().inFav : L().toFav, () => { toggleFav(t.id); popId = t.id; render(); popId = ""; }, on);
+  if (on && popId === t.id) b.classList.add("pop");
+  return b;
+}
 function detailHero(t) {
   const r = resumeFor(t.id), bg = h("div", { class: "hero-bg" });
   if (t.poster) bg.style.backgroundImage = 'url("' + t.poster + '")'; else bg.append(h("b", { class: "hero-mark" }, "F"));
@@ -240,7 +247,7 @@ function detailHero(t) {
     h("div", { class: "dmeta" }, scoreChip(t), meta.map(m => h("span", null, m))),
     meta2.length ? h("div", { class: "dmeta2" }, meta2.join(" · ")) : null,
     h("div", { class: "actions" }, play, tb,
-      iconBtn(on ? SVG.mark : SVG.markO, on ? L().inFav : L().toFav, () => { toggleFav(t.id); popId = t.id; render(); popId = ""; }, on), shareBtn(t)),
+      favIcon(t, on), shareBtn(t)),
     r.fresh ? null : h("p", { class: "rinfo" }, resumeLine(t))));
 }
 const epVotes = {};
@@ -326,7 +333,7 @@ function carousel(list) {
   let cur = 0, timer = 0;
   const dots = h("div", { class: "hdots" }, list.map((t, i) => h("button", { type: "button", class: i ? "" : "on", "aria-label": tr(t.title), onclick: () => { show(i); restart(); } })));
   function show(i) { cur = i; slides.forEach((s, k) => s.classList.toggle("on", k === i)); [...dots.children].forEach((d, k) => d.classList.toggle("on", k === i)); }
-  function restart() { clearInterval(timer); timer = setInterval(() => { if (!document.body.contains(wrap)) return clearInterval(timer); if (!cfg.heroAuto || !$("player").hidden || wrap.matches(":hover")) return; show((cur + 1) % list.length); }, 8000); }
+  function restart() { clearInterval(timer); timer = setInterval(() => { if (!document.body.contains(wrap)) return clearInterval(timer); if (!cfg.heroAuto || !$("player").hidden || document.hidden) return; show((cur + 1) % list.length); }, 5000); }
   wrap.append(dots); restart();
   return wrap;
 }
@@ -355,11 +362,8 @@ function viewSearch() {
   const res = q ? TITLES.filter(t => textOf(t).includes(q)) : TITLES;
   return h("section", { class: "page" }, h("h2", null, L().search + (q ? ": " + $("q").value.trim() : "")), res.length ? grid(res.map(t => titleCard(t))) : h("p", { class: "none" }, L().noFind));
 }
-const vlist = list => {
-  const sc = h("div", { class: "scroller eprail" }, list); wheelRail(sc);
-  const arr = d => h("button", { class: "arr " + (d < 0 ? "l" : "r"), type: "button", "aria-label": d < 0 ? "Back" : "Next", onclick: () => sc.scrollBy({ left: d * sc.clientWidth * 0.8, behavior: "smooth" }) }, d < 0 ? "‹" : "›");
-  return h("div", { class: "rwrap" }, arr(-1), sc, arr(1));
-};
+const vcol = list => h("div", { class: "vlist" }, list);
+const hrail = list => { const sc = h("div", { class: "scroller eprail" }, list); wheelRail(sc); return sc; };
 function epView(t) {
   const all = cfg.epView !== "row";
   const mk = si => t.seasons[si].episodes.map((e, i) => epCard(t, si, i));
@@ -368,10 +372,10 @@ function epView(t) {
   if (all) {
     t.seasons.forEach((s, si) => {
       const ready = s.episodes.some(e => sourcesOf(e.video).length);
-      body.push(h("div", { class: "sblock" + (ready ? "" : " soon") }, h("h3", { class: "stitle" }, L().season + " " + (si + 1), ready ? null : h("span", null, L().soon)), ready ? vlist(mk(si)) : h("p", { class: "soonp" }, L().soonT)));
+      body.push(h("div", { class: "sblock" + (ready ? "" : " soon") }, h("h3", { class: "stitle" }, L().season + " " + (si + 1), ready ? null : h("span", null, L().soon)), ready ? vcol(mk(si)) : h("p", { class: "soonp" }, L().soonT)));
     });
   } else {
-    body.push(h("div", { class: "seasons" }, t.seasons.map((s, i) => h("button", { type: "button", "aria-pressed": i === tSeason, onclick: () => { tSeason = i; render(true); } }, L().season + " " + (i + 1)))), vlist(mk(tSeason)));
+    body.push(h("div", { class: "seasons" }, t.seasons.map((s, i) => h("button", { type: "button", "aria-pressed": i === tSeason, onclick: () => { tSeason = i; render(true); } }, L().season + " " + (i + 1)))), hrail(mk(tSeason)));
   }
   return h("div", { class: "epview" }, seg, body);
 }
@@ -469,7 +473,7 @@ function revealInit() {
   if (!("IntersectionObserver" in window) || cfg.calm || LITE) return;
   if (revObs) revObs.disconnect();
   revObs = new IntersectionObserver(es => es.forEach(en => { if (en.isIntersecting) { en.target.classList.add("in"); revObs.unobserve(en.target); } }), { threshold: 0.08, rootMargin: "0px 0px -6% 0px" });
-  const els = document.querySelectorAll(".eprail .card, .dsec > div, .csec, .stitle, .tags, .facts > div, .stats .tile, .srow, .best .brow");
+  const els = document.querySelectorAll(".vlist .card, .eprail .card, .dsec > div, .csec, .stitle, .tags, .facts > div, .stats .tile, .srow, .best .brow");
   els.forEach((el, i) => { el.classList.add("rv"); el.style.transitionDelay = Math.min((i % 6) * 60, 300) + "ms"; revObs.observe(el); });
 }
 
