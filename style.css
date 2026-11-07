@@ -225,3 +225,25 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;ba
 .card h3,.card .t{transition:color .25s}.card:hover h3,.card:hover .t{color:var(--gold-l)}
 ::selection{background:rgba(217,180,107,.35)}
 html{scroll-behavior:smooth}
+
+/* ===== сборка 14 ===== */
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:6px 0 26px}
+.tile{background:linear-gradient(160deg,var(--panel),transparent);border:1px solid var(--line);border-radius:var(--r);padding:18px 20px;transition:transform .3s,border-color .3s}
+.tile:hover{transform:translateY(-3px);border-color:var(--gold)}
+.tile b{display:block;font:700 30px/1.1 'Playfair Display',serif;color:var(--gold-l)}
+.tile small{color:var(--mute);letter-spacing:.06em}
+.bgdot{width:30px;height:30px;border-radius:50%;border:2px solid;cursor:pointer;padding:0;transition:transform .2s,box-shadow .2s}
+.bgdot:hover{transform:scale(1.12)}.bgdot.on{box-shadow:0 0 0 3px var(--bg),0 0 0 5px var(--gold)}
+.keys{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:10px;margin-top:8px}
+.keys div{display:flex;align-items:center;gap:12px;color:var(--mute);font-size:14px}
+kbd{font:500 12px/1 ui-monospace,monospace;color:var(--text);background:var(--panel);border:1px solid var(--line);border-bottom-width:2px;border-radius:7px;padding:6px 9px;white-space:nowrap}
+.about{color:var(--mute);font-size:13px;margin-top:10px}
+.top{background:rgba(10,12,19,.8);background:color-mix(in srgb,var(--bg) 82%,transparent)}
+.pl .toast{bottom:auto;top:76px;transform:translate(-50%,-14px)}.pl .toast.show{transform:translate(-50%,0)}
+.skip,.upnext{transition:bottom .35s cubic-bezier(.2,.8,.2,1),opacity .3s}
+.player.idle .skip{bottom:36px}.player.idle .upnext{bottom:36px}
+.ctrl .pill,.ctrl .icon{transition:background .2s,transform .2s}.ctrl .icon:hover,.ctrl .pill:hover{transform:translateY(-1px)}
+.time{font-variant-numeric:tabular-nums;color:rgba(255,255,255,.85);font-size:13px;margin:0 8px}
+@media (max-width:700px){.stats{grid-template-columns:1fr 1fr 1fr;gap:8px}.tile{padding:14px}.tile b{font-size:22px}
+.ctrl .pill,.ctrl .icon{min-height:40px}.row2{flex-wrap:wrap}#vol{display:none}.skip{bottom:150px!important}.player.idle .skip{bottom:40px!important}}
+.page.settings,.settings{max-width:1080px!important}

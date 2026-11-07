@@ -1,10 +1,10 @@
 const TXT = {
-  ru: { rateT: "Оцените", rateYour: "Ваша оценка", rateThanks: "Спасибо за оценку!", rateVotes: "оценок", share: "Поделиться", copied: "Ссылка скопирована", author: "Для автора", authorTool: "Разметка серии", aSrc: "Видео играет с адреса", aNow: "Сейчас", aIntroS: "Заставка: начало", aIntroE: "Заставка: конец", aCredS: "Титры: начало", aCopy: "Скопировать", aHint: "Поставь видео на нужный момент и нажми кнопку. Готовую строку вставь в episodes.js после video: {...},", aClose: "Закрыть", slowNet: "Слабое соединение: включено качество ниже", emTitle: "Серия пока недоступна", emText: "Загляни позже, мы скоро её добавим.", errTitle: "Что-то пошло не так", errText: "Не удалось загрузить видео. Возможно, сервер перегружен. Попробуй ещё раз чуть позже.", errCode: "Код ошибки", retry: "Повторить", skipCred: "Пропустить титры", secWatch: "Просмотр", secLook: "Внешний вид", secData: "Данные", sAccent: "Цвет акцента", sSpeed: "Скорость по умолчанию", sCalm: "Спокойный режим", sCalmHint: "Отключает анимации на сайте.", dub: "Озвучка", sDub: "Озвучка по умолчанию", sDubHint: "Если такой озвучки у серии нет, включится русская.", dubNames: { ru: "Русская", en: "English" }, isNew: "Новинка", seeAll: "Все результаты", home: "Главная", series: "Сериалы", movies: "Фильмы", favorites: "Любимое", search: "Поиск", settings: "Настройки", kicker: "Сейчас в кинотеатре", kSeries: "Сериал", kMovie: "Фильм", season: "Сезон", seasonsN: "сез.", ep: "серия", min: "мин", left: "Осталось", seen: "Просмотрено",
+  ru: { secStats: "Ваша статистика", stWatched: "Серий досмотрено", stTime: "Время просмотра", stFav: "В любимом", stMin: "мин", sBg: "Фон", bgNames: { midnight: "Полночь", graphite: "Графит", wine: "Бордо", forest: "Хвоя" }, sHero: "Автосмена афиши", sHeroHint: "Листать большую афишу на главной", secKeys: "Горячие клавиши", keysL: [["Пробел / K", "пауза"], ["← →", "перемотка на 10 секунд"], ["↑ ↓", "громкость"], ["F", "полный экран"], ["M", "без звука"], ["Esc", "закрыть плеер"]], secAbout: "О сайте", rateT: "Оцените", rateYour: "Ваша оценка", rateThanks: "Спасибо за оценку!", rateVotes: "оценок", share: "Поделиться", copied: "Ссылка скопирована", author: "Для автора", authorTool: "Разметка серии", aSrc: "Видео играет с адреса", aNow: "Сейчас", aIntroS: "Заставка: начало", aIntroE: "Заставка: конец", aCredS: "Титры: начало", aCopy: "Скопировать", aHint: "Поставь видео на нужный момент и нажми кнопку. Готовую строку вставь в episodes.js после video: {...},", aClose: "Закрыть", slowNet: "Слабое соединение: включено качество ниже", emTitle: "Серия пока недоступна", emText: "Загляни позже, мы скоро её добавим.", errTitle: "Что-то пошло не так", errText: "Не удалось загрузить видео. Возможно, сервер перегружен. Попробуй ещё раз чуть позже.", errCode: "Код ошибки", retry: "Повторить", skipCred: "Пропустить титры", secWatch: "Просмотр", secLook: "Внешний вид", secData: "Данные", sAccent: "Цвет акцента", sSpeed: "Скорость по умолчанию", sCalm: "Спокойный режим", sCalmHint: "Отключает анимации на сайте.", dub: "Озвучка", sDub: "Озвучка по умолчанию", sDubHint: "Если такой озвучки у серии нет, включится русская.", dubNames: { ru: "Русская", en: "English" }, isNew: "Новинка", seeAll: "Все результаты", home: "Главная", series: "Сериалы", movies: "Фильмы", favorites: "Любимое", search: "Поиск", settings: "Настройки", kicker: "Сейчас в кинотеатре", kSeries: "Сериал", kMovie: "Фильм", season: "Сезон", seasonsN: "сез.", ep: "серия", min: "мин", left: "Осталось", seen: "Просмотрено",
     cont: "Продолжить просмотр", favRow: "Любимое", topRow: "Топ", allRow: "Все по новизне", play: "Смотреть", resume: "Продолжить", more: "Подробнее", addFav: "В любимое", inFav: "В любимом", trailer: "Трейлер сезона", trailerOf: "Трейлер", seasons: "Сезоны и серии",
     noFav: "Здесь появятся сериалы и фильмы, которые ты отметишь сердечком.", noFind: "Ничего не найдено.", noList: "Пока здесь пусто.", added: "Добавлено в любимое", removed: "Убрано из любимого",
     sLang: "Язык", sQuality: "Качество по умолчанию", sQHint: "Если такого качества у видео нет, выберется ближайшее.", qMax: "Максимальное", sNext: "Автозапуск следующей серии", sSkip: "Пропускать заставку автоматически", sBackup: "Резервная копия", sBHint: "Любимое и прогресс хранятся в этом браузере. Скопируй код и вставь его на другом устройстве.", exp: "Копировать", imp: "Вставить", sReset: "История просмотра", reset: "Очистить", sure: "Очистить историю просмотра?", copied: "Код скопирован", copyThis: "Скопируй код:", pasteIt: "Вставь код:", done: "Готово", bad: "Код не подошёл",
     next: "Следующая серия", quality: "Качество", speed: "Скорость", normal: "Обычная", empty: "Видео пока не добавлено. Вставь ссылку в episodes.js или catalog.js.", skip: "Пропустить заставку", upnext: "Дальше", now: "Смотреть сейчас", cancel: "Отмена" },
-  en: { rateT: "Rate it", rateYour: "Your rating", rateThanks: "Thanks for rating!", rateVotes: "ratings", share: "Share", copied: "Link copied", author: "For the author", authorTool: "Episode markup", aSrc: "Video is playing from", aNow: "Now", aIntroS: "Intro: start", aIntroE: "Intro: end", aCredS: "Credits: start", aCopy: "Copy", aHint: "Seek to the moment and press a button. Paste the line into episodes.js after video: {...},", aClose: "Close", slowNet: "Slow connection: switched to lower quality", emTitle: "Episode not available yet", emText: "Check back later, we will add it soon.", errTitle: "Something went wrong", errText: "The video could not be loaded. The server may be overloaded. Please try again a little later.", errCode: "Error code", retry: "Retry", skipCred: "Skip credits", secWatch: "Playback", secLook: "Appearance", secData: "Data", sAccent: "Accent color", sSpeed: "Default speed", sCalm: "Calm mode", sCalmHint: "Turns off animations on the site.", dub: "Audio", sDub: "Default audio", sDubHint: "If an episode lacks this audio, Russian is used.", dubNames: { ru: "Russian", en: "English" }, isNew: "New", seeAll: "All results", home: "Home", series: "Series", movies: "Movies", favorites: "Favorites", search: "Search", settings: "Settings", kicker: "Now showing", kSeries: "Series", kMovie: "Movie", season: "Season", seasonsN: "seasons", ep: "episode", min: "min", left: "Left", seen: "Watched",
+  en: { secStats: "Your stats", stWatched: "Episodes finished", stTime: "Watch time", stFav: "Favorites", stMin: "min", sBg: "Background", bgNames: { midnight: "Midnight", graphite: "Graphite", wine: "Burgundy", forest: "Pine" }, sHero: "Auto-rotate hero", sHeroHint: "Cycle the big banner on the home page", secKeys: "Keyboard shortcuts", keysL: [["Space / K", "play / pause"], ["← →", "seek 10 seconds"], ["↑ ↓", "volume"], ["F", "fullscreen"], ["M", "mute"], ["Esc", "close player"]], secAbout: "About", rateT: "Rate it", rateYour: "Your rating", rateThanks: "Thanks for rating!", rateVotes: "ratings", share: "Share", copied: "Link copied", author: "For the author", authorTool: "Episode markup", aSrc: "Video is playing from", aNow: "Now", aIntroS: "Intro: start", aIntroE: "Intro: end", aCredS: "Credits: start", aCopy: "Copy", aHint: "Seek to the moment and press a button. Paste the line into episodes.js after video: {...},", aClose: "Close", slowNet: "Slow connection: switched to lower quality", emTitle: "Episode not available yet", emText: "Check back later, we will add it soon.", errTitle: "Something went wrong", errText: "The video could not be loaded. The server may be overloaded. Please try again a little later.", errCode: "Error code", retry: "Retry", skipCred: "Skip credits", secWatch: "Playback", secLook: "Appearance", secData: "Data", sAccent: "Accent color", sSpeed: "Default speed", sCalm: "Calm mode", sCalmHint: "Turns off animations on the site.", dub: "Audio", sDub: "Default audio", sDubHint: "If an episode lacks this audio, Russian is used.", dubNames: { ru: "Russian", en: "English" }, isNew: "New", seeAll: "All results", home: "Home", series: "Series", movies: "Movies", favorites: "Favorites", search: "Search", settings: "Settings", kicker: "Now showing", kSeries: "Series", kMovie: "Movie", season: "Season", seasonsN: "seasons", ep: "episode", min: "min", left: "Left", seen: "Watched",
     cont: "Continue watching", favRow: "Favorites", topRow: "Top", allRow: "All by newest", play: "Watch", resume: "Continue", more: "Details", addFav: "Favorite", inFav: "In favorites", trailer: "Season trailer", trailerOf: "Trailer", seasons: "Seasons and episodes",
     noFav: "Series and movies you mark with a heart will appear here.", noFind: "Nothing found.", noList: "Nothing here yet.", added: "Added to favorites", removed: "Removed from favorites",
     sLang: "Language", sQuality: "Default quality", sQHint: "If a video lacks this quality, the closest one is used.", qMax: "Maximum", sNext: "Autoplay next episode", sSkip: "Skip intro automatically", sBackup: "Backup", sBHint: "Favorites and progress are stored in this browser. Copy the code and paste it on another device.", exp: "Copy", imp: "Paste", sReset: "Watch history", reset: "Clear", sure: "Clear watch history?", copied: "Code copied", copyThis: "Copy the code:", pasteIt: "Paste the code:", done: "Done", bad: "Invalid code",
@@ -55,10 +55,13 @@ let fav = store.get("fav", []);
 let prog = store.get("progress", {});
 let lasts = store.get("lasts", null);
 if (!lasts) { lasts = {}; const l = store.get("last", null); if (l) lasts.main = { s: l.s, i: l.i, ts: Date.now() }; }
-let cfg = Object.assign({ quality: "720", dub: "ru", accent: "gold", speed: 1, calm: false, autonext: true, autoskip: false }, store.get("cfg", {}));
+let cfg = Object.assign({ quality: "720", dub: "ru", accent: "gold", speed: 1, calm: false, autonext: true, autoskip: false, bg: "midnight", heroAuto: true }, store.get("cfg", {}));
 const LITE = /SMART-?TV|Tizen|Web0S|WebOS|BRAVIA|HbbTV|NetCast|Android TV|AFT/i.test(navigator.userAgent) || (navigator.hardwareConcurrency || 8) <= 2;
 const ACCENTS = { gold: ["#d9b46b", "#a97a2c", "#f3dca4", "217,180,107"], coral: ["#ff8a6b", "#c4553a", "#ffc2b0", "255,138,107"], mint: ["#6bd9a8", "#2e9c70", "#b5f0d6", "107,217,168"], sky: ["#6bb8ff", "#2f7fc7", "#b8dcff", "107,184,255"], lilac: ["#b79bff", "#7a5ccf", "#dccfff", "183,155,255"] };
+const BGS = { midnight: ["#0a0c13", "#131726", "#232940"], graphite: ["#0e0e10", "#19191c", "#2a2a2f"], wine: ["#12080c", "#1f0f16", "#38202a"], forest: ["#07100d", "#0f1c17", "#1f3a30"] };
 function applyTheme() {
+  const bgc = BGS[cfg.bg] || BGS.midnight, sty = document.documentElement.style;
+  sty.setProperty("--bg", bgc[0]); sty.setProperty("--panel", bgc[1]); sty.setProperty("--line", bgc[2]);
   const a = ACCENTS[cfg.accent] || ACCENTS.gold, st = document.documentElement.style;
   st.setProperty("--gold", a[0]); st.setProperty("--gold-d", a[1]); st.setProperty("--gold-l", a[2]);
   st.setProperty("--glow", "rgba(" + a[3] + ",.14)"); st.setProperty("--glow2", "rgba(" + a[3] + ",.35)");
@@ -70,7 +73,7 @@ const saveAll = () => { store.set("fav", fav); store.set("progress", prog); stor
 const L = () => TXT[lang];
 const tr = o => (typeof o === "string" ? o : (o && (o[lang] || o.ru)) || "");
 const firstVid = t => { for (const se of t.seasons) for (const e of se.episodes) { const x = sourcesOf(e.video)[0]; if (x) return x[1]; } return ""; };
-const BUILD = "сборка 13";
+const BUILD = "сборка 14";
 function dataStamp() {
   let x = 5381; const str = TITLES.map(t => firstVidAll(t)).join("#");
   for (let i = 0; i < str.length; i++) x = ((x << 5) + x + str.charCodeAt(i)) | 0;
@@ -83,11 +86,13 @@ const watched = p => !!(p && p.d && p.t / p.d > 0.95);
 const started = p => !!(p && p.d && p.t > 5);
 const fmt = s => { s = Math.max(0, Math.floor(s || 0)); const hh = Math.floor(s / 3600), m = Math.floor(s % 3600 / 60), r = s % 60; return (hh ? hh + ":" + String(m).padStart(2, "0") : m) + ":" + String(r).padStart(2, "0"); };
 const leftText = p => (p && p.d ? L().left + " " + Math.max(1, Math.ceil((p.d - p.t) / 60)) + " " + L().min : "");
-function toast(m) { const t = $("toast"); t.textContent = m; t.classList.add("show"); clearTimeout(toast.t); toast.t = setTimeout(() => t.classList.remove("show"), 2200); }
+function toast(m) { const t = $("toast"); document.body.classList.toggle("pl", !$("player").hidden); t.textContent = m; t.classList.add("show"); clearTimeout(toast.t); toast.t = setTimeout(() => t.classList.remove("show"), 2200); }
 
 function nextOf(t, s, i) {
-  if (t.seasons[s].episodes[i + 1]) return { s, i: i + 1 };
-  for (let k = s + 1; k < t.seasons.length; k++) if (t.seasons[k].episodes.length) return { s: k, i: 0 };
+  for (let k = s; k < t.seasons.length; k++) {
+    const eps = t.seasons[k].episodes;
+    for (let j = k === s ? i + 1 : 0; j < eps.length; j++) if (sourcesOf(eps[j].video).length || sourcesOf((eps[j].dub || {}).en).length) return { s: k, i: j };
+  }
   return null;
 }
 function sourcesOf(video) {
@@ -216,7 +221,7 @@ function carousel(list) {
   let cur = 0, timer = 0;
   const dots = h("div", { class: "hdots" }, list.map((t, i) => h("button", { type: "button", class: i ? "" : "on", "aria-label": tr(t.title), onclick: () => { show(i); restart(); } })));
   function show(i) { cur = i; slides.forEach((s, k) => s.classList.toggle("on", k === i)); [...dots.children].forEach((d, k) => d.classList.toggle("on", k === i)); }
-  function restart() { clearInterval(timer); timer = setInterval(() => { if (!document.body.contains(wrap)) return clearInterval(timer); if (!$("player").hidden || wrap.matches(":hover")) return; show((cur + 1) % list.length); }, 8000); }
+  function restart() { clearInterval(timer); timer = setInterval(() => { if (!document.body.contains(wrap)) return clearInterval(timer); if (!cfg.heroAuto || !$("player").hidden || wrap.matches(":hover")) return; show((cur + 1) % list.length); }, 8000); }
   wrap.append(dots); restart();
   return wrap;
 }
@@ -264,7 +269,14 @@ function viewSettings() {
   const r = (l, sub, ctl) => h("div", { class: "srow" }, h("div", null, h("b", null, l), sub ? h("small", null, sub) : null), ctl);
   const sec = t => h("h3", { class: "sec" }, t);
   const dots = h("div", { class: "acc" }, Object.keys(ACCENTS).map(k => h("button", { type: "button", class: "dot" + (cfg.accent === k ? " on" : ""), style: "background:" + ACCENTS[k][0], "aria-label": k, onclick: () => { cfg.accent = k; saveAll(); applyTheme(); render(); } })));
+  const bgs = h("div", { class: "acc" }, Object.keys(BGS).map(k => h("button", { type: "button", class: "bgdot" + (cfg.bg === k ? " on" : ""), title: L().bgNames[k], style: "background:linear-gradient(135deg," + BGS[k][1] + "," + BGS[k][0] + ");border-color:" + BGS[k][2], "aria-label": L().bgNames[k], onclick: () => { cfg.bg = k; saveAll(); applyTheme(); render(); } })));
+  function statsBlock() {
+    const ps = Object.values(prog).filter(p => p && p.d), done = ps.filter(p => p.t > p.d - Math.max(15, p.d * 0.06)).length, mins = Math.round(ps.reduce((a, p) => a + Math.min(p.t, p.d), 0) / 60);
+    const tile = (n, l) => h("div", { class: "tile" }, h("b", null, n), h("small", null, l));
+    return h("div", { class: "stats" }, tile(done, L().stWatched), tile(mins + " " + L().stMin, L().stTime), tile(fav.length, L().stFav));
+  }
   return h("section", { class: "page settings" }, h("h1", null, L().settings),
+    statsBlock(),
     sec(L().secWatch),
     r(L().sQuality, L().sQHint, sel([["max", L().qMax], ["720", "720p"], ["480", "480p"]], cfg.quality, x => { cfg.quality = x; saveAll(); })),
     r(L().sDub, L().sDubHint, sel([["ru", L().dubNames.ru], ["en", L().dubNames.en]], cfg.dub, x => { cfg.dub = x; saveAll(); })),
@@ -273,10 +285,16 @@ function viewSettings() {
     sec(L().secLook),
     r(L().sLang, null, sel([["ru", "Русский"], ["en", "English"]], lang, x => { lang = x; store.set("lang", lang); render(); })),
     r(L().sAccent, null, dots),
+    r(L().sBg, null, bgs),
+    r(L().sHero, L().sHeroHint, sw("heroAuto")),
     r(L().sCalm, L().sCalmHint, sw("calm")),
     sec(L().secData),
     r(L().sBackup, L().sBHint, h("div", { class: "btns" }, h("button", { class: "btn", type: "button", onclick: exportData }, L().exp), h("button", { class: "btn", type: "button", onclick: importData }, L().imp))),
-    r(L().sReset, null, h("button", { class: "btn", type: "button", onclick: resetAll }, L().reset)));
+    r(L().sReset, null, h("button", { class: "btn", type: "button", onclick: resetAll }, L().reset)),
+    sec(L().secKeys),
+    h("div", { class: "keys" }, L().keysL.map(([k, d]) => h("div", null, h("kbd", null, k), h("span", null, d)))),
+    sec(L().secAbout),
+    h("p", { class: "about" }, SITE_TITLE + " · " + BUILD + " · " + dataStamp()));
 }
 function exportData() {
   const s = JSON.stringify({ fav, prog, lasts, cfg });
@@ -362,7 +380,7 @@ function showEmpty(kind) { emptyKind = kind; renderEmpty(); $("empty").hidden = 
 function openPlayer(o) {
   if (document.activeElement && document.activeElement.blur) document.activeElement.blur();
   saveProgress(true);
-  hideUpNext(); closeMenu();
+  hideUpNext(); closeMenu(); resetPlayerUI();
   active = o; o.ready = false; rate = cfg.speed || 1;
   document.body.style.overflow = "hidden";
   $("player").hidden = false;
@@ -409,8 +427,14 @@ function saveProgress(force) {
   prog[active.id] = { t: v.currentTime, d: v.duration, f: active.fp || "" };
   store.set("progress", prog);
 }
+function resetPlayerUI() {
+  ["skip", "upnext", "empty", "spin", "author", "qmenu"].forEach(i => { const e = $(i); if (e) e.hidden = true; });
+  clearTimeout(spinT); clearTimeout(loadT); clearInterval(aTimer); stalls = [];
+  $("player").classList.remove("idle"); $("unBar").style.transform = "scaleX(0)"; $("skFill").style.transform = "scaleX(0)";
+  menuOpen = false;
+}
 function closePlayer() {
-  saveProgress(true); hideUpNext(); closeMenu(); v.pause();
+  saveProgress(true); hideUpNext(); closeMenu(); v.pause(); resetPlayerUI();
   if (document.fullscreenElement) document.exitFullscreen().catch(() => {});
   v.removeAttribute("src"); v.load();
   $("player").hidden = true;
@@ -512,9 +536,12 @@ v.addEventListener("error", () => {
 v.preload = "auto";
 let stalls = [], spinT = 0, loadT = 0;
 const spinOff = () => { clearTimeout(spinT); clearTimeout(loadT); $("spin").hidden = true; };
+let lastSeekAt = 0;
+v.addEventListener("seeking", () => { lastSeekAt = Date.now(); });
 v.addEventListener("waiting", () => {
   if (!active || !v.getAttribute("src")) return;
   clearTimeout(spinT); spinT = setTimeout(() => { $("spin").hidden = false; }, 350);
+  if (Date.now() - lastSeekAt < 4000) return;
   const now = Date.now(); stalls = stalls.filter(x => now - x < 40000); stalls.push(now);
   if (stalls.length >= 3 && active.srcs) {
     const i = active.srcs.findIndex(([, u]) => u === active.cur);
