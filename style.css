@@ -11,7 +11,7 @@ a{color:inherit;text-decoration:none}
 .nav{display:flex;gap:4px;flex-wrap:wrap}
 .nav a{padding:6px 14px;border-radius:999px;color:var(--mute);transition:background .2s,color .2s}
 .nav a:hover{color:var(--text)}
-.nav a.on{background:var(--panel);color:var(--text)}
+.nav a.on{color:var(--text)}
 .sp{flex:1}
 .sbox{position:relative}
 .q{width:min(220px,40vw);padding-right:34px!important;background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:7px 16px;outline:none;transition:border-color .2s,width .25s;-webkit-user-select:text;user-select:text}
@@ -203,7 +203,7 @@ body::before{content:"";position:fixed;top:0;right:0;bottom:0;left:0;z-index:-1;
 .card:hover .thumb,.card:focus-visible .thumb{transform:translateY(-6px) scale(1.02);box-shadow:0 22px 44px -14px var(--glow2),0 0 0 1px var(--gold)}
 .row{animation:rise .7s both}.row:nth-of-type(2){animation-delay:.06s}.row:nth-of-type(3){animation-delay:.12s}.row:nth-of-type(4){animation-delay:.18s}
 .row h2{display:flex;align-items:center;gap:12px}
-.btn{transition:transform .2s,background .2s,border-color .2s,color .2s,filter .2s}.btn:hover{transform:translateY(-2px)}.btn.main{box-shadow:0 8px 26px -10px var(--gold)}
+.btn{transition:background .25s,border-color .25s,color .25s}.btn.main{box-shadow:0 8px 26px -10px var(--gold)}
 .calm .hero::before,.calm .hero-bg,.calm .row{animation:none}
 @media (prefers-reduced-motion:reduce){.hero::before,.hero-bg{animation:none}}
 @media (max-width:700px){.hdots{bottom:20px}.hero-mark{right:-6%;opacity:.1}}
@@ -264,7 +264,7 @@ kbd{font:500 12px/1 ui-monospace,monospace;color:var(--text);background:var(--pa
 .ghost:hover{background:rgba(255,255,255,.18);transform:translateY(-2px)}
 .pi,.vi{display:inline-flex;line-height:0}
 .ibtn{width:60px;height:60px;border-radius:16px;border:0;background:rgba(255,255,255,.1);color:var(--text);cursor:pointer;display:grid;place-items:center;transition:background .2s,transform .2s,color .2s}
-.ibtn:hover{background:rgba(255,255,255,.18);transform:translateY(-2px)}.ibtn.on{color:var(--gold)}
+.ibtn:hover{background:rgba(255,255,255,.18)}.ibtn.on{color:var(--gold)}
 .dsec{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(300px,1fr);gap:clamp(24px,5vw,72px);padding-top:30px;padding-bottom:110px;scroll-margin-top:80px}
 #sec-eps{scroll-margin-top:80px}
 .dsec h2{font:700 30px 'Playfair Display',serif;margin-bottom:18px}
@@ -277,7 +277,7 @@ kbd{font:500 12px/1 ui-monospace,monospace;color:var(--text);background:var(--pa
 .rq b{display:block;font-size:20px}.rq small{color:var(--mute);font-size:14px}
 .vbtns{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
 .vbtn{display:flex;align-items:center;justify-content:center;gap:10px;height:56px;border-radius:14px;border:1px solid transparent;background:rgba(255,255,255,.08);color:var(--text);font:800 14px Onest,sans-serif;letter-spacing:.07em;text-transform:uppercase;cursor:pointer;transition:background .2s,transform .2s,border-color .2s,color .2s}
-.vbtn:hover:not(:disabled){background:rgba(255,255,255,.15);transform:translateY(-2px)}
+.vbtn:hover:not(:disabled){background:rgba(255,255,255,.15)}
 .vbtn.on{background:rgba(217,180,107,.16);border-color:var(--gold);color:var(--gold-l)}
 .vbtn:disabled{opacity:.4;cursor:default}
 .tabbar{position:fixed;left:50%;bottom:22px;transform:translate(-50%,140%);z-index:7;display:flex;align-items:center;gap:6px;padding:8px 8px 8px 14px;background:rgba(19,23,38,.82);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);border:1px solid var(--line);border-radius:20px;box-shadow:0 18px 50px -14px #000;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
@@ -349,7 +349,7 @@ html.ft-s{zoom:.92}html.ft-l{zoom:1.1}
 @keyframes pgin{from{opacity:0}to{opacity:1}}
 #app>*{animation:pgin .6s ease both}#app.noanim>*{animation:none}
 .btn,.bigplay,.ghost,.ibtn,.vbtn,.seg button,.seasons button{transition:transform .2s cubic-bezier(.2,.7,.2,1),background .25s,border-color .25s,color .25s,box-shadow .25s,filter .25s}
-.btn:active,.bigplay:active,.ghost:active,.ibtn:active,.vbtn:active,.seg button:active{transform:scale(.97)}
+
 .nav a{position:relative}
 .tags span{transition:border-color .25s,background .25s,transform .25s}.tags span:hover{border-color:var(--gold);transform:translateY(-1px)}
 .srow{transition:background .25s}
@@ -364,15 +364,10 @@ html.ft-s{zoom:.92}html.ft-l{zoom:1.1}
 
 /* build 30 */
 .ibtn{position:relative}
-.ibtn.pop svg{animation:heartpop .7s cubic-bezier(.2,1.6,.4,1)}
-.ibtn.pop::after{content:"";position:absolute;left:50%;top:50%;width:26px;height:26px;margin:-13px;border-radius:50%;border:2px solid var(--gold);animation:ring .7s ease-out forwards;pointer-events:none}
-.ibtn.pop::before{content:"";position:absolute;left:50%;top:50%;width:6px;height:6px;margin:-3px;border-radius:50%;color:var(--gold);box-shadow:0 -26px currentColor,22px -13px currentColor,22px 13px currentColor,0 26px currentColor,-22px 13px currentColor,-22px -13px currentColor;animation:burst .7s ease-out forwards;pointer-events:none}
 @keyframes heartpop{0%{transform:scale(.4)}45%{transform:scale(1.5)}70%{transform:scale(.9)}100%{transform:scale(1)}}
 @keyframes ring{from{transform:scale(.6);opacity:.9}to{transform:scale(2.4);opacity:0}}
 @keyframes burst{0%{transform:scale(.3);opacity:1}100%{transform:scale(1.15);opacity:0}}
 .ibtn:not(.on):hover svg{transform:scale(1.12)}.ibtn svg{transition:transform .25s cubic-bezier(.2,1.4,.4,1)}
-.calm .hero-in>*,.calm .ibtn.pop svg,.calm .ibtn.pop::before,.calm .ibtn.pop::after{animation:none}
-
 /* build 31: плавность */
 .rv{opacity:0;transform:translateY(18px);transition:opacity .8s cubic-bezier(.22,.61,.36,1),transform .8s cubic-bezier(.22,.61,.36,1)}
 .rv.in{opacity:1;transform:none}
@@ -413,3 +408,70 @@ html.ft-s{zoom:.92}html.ft-l{zoom:1.1}
 .rv,.rv.in{opacity:1!important;transform:none!important;transition:none!important}
 .card{animation:pgin .45s ease both}
 @keyframes rise{from{opacity:0}to{opacity:1}}
+
+/* build 33: анимации нового уровня */
+/* навигация: скользящая подложка */
+.nav{position:relative}
+.nav a{position:relative;z-index:1;transition:color .3s ease}
+.navind{position:absolute;left:0;top:0;border-radius:999px;background:var(--panel);box-shadow:inset 0 0 0 1px var(--line);transition:transform .5s cubic-bezier(.65,0,.35,1),width .5s cubic-bezier(.65,0,.35,1),height .3s,opacity .3s;pointer-events:none;z-index:0}
+/* переход страниц и карточек */
+@keyframes pagein{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@keyframes cardin{from{opacity:0;transform:translateY(18px) scale(.98)}to{opacity:1;transform:none}}
+#app>*{animation:pagein .6s cubic-bezier(.2,.7,.2,1) both}
+#app.noanim>*{animation:none}
+.card{animation:cardin .65s cubic-bezier(.2,.7,.2,1) both}
+.nocards .card{animation:none}
+.scroller .card:nth-child(2),.grid .card:nth-child(2){animation-delay:.06s}.scroller .card:nth-child(3),.grid .card:nth-child(3){animation-delay:.12s}.scroller .card:nth-child(4),.grid .card:nth-child(4){animation-delay:.18s}.scroller .card:nth-child(5),.grid .card:nth-child(5){animation-delay:.24s}.scroller .card:nth-child(6),.grid .card:nth-child(6){animation-delay:.3s}.scroller .card:nth-child(7),.grid .card:nth-child(7){animation-delay:.36s}.scroller .card:nth-child(n+8),.grid .card:nth-child(n+8){animation-delay:.42s}
+/* значок запуска на карточке: крупнее и плавнее */
+.thumb::after{width:72px;height:72px;margin:-36px;background-size:36px;background-position:55% 50%;transform:scale(.7);transition:opacity .35s ease,transform .45s cubic-bezier(.2,1.3,.4,1)}
+/* точки афиши: полоска заполняется до смены */
+.hdots button{position:relative;overflow:hidden;transition:width .5s cubic-bezier(.65,0,.35,1),background .4s}
+.hdots button.on{width:44px;background:rgba(255,255,255,.28)}
+.hdots button i{position:absolute;top:0;left:0;bottom:0;width:100%;background:var(--gold);transform:scaleX(0);transform-origin:left;border-radius:inherit}
+.hdots button.on i{transform:scaleX(1)}
+.hdots button.on.auto i{animation:dotfill 5s linear both}
+@keyframes dotfill{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+/* смена слайдов афиши: мягкий наплыв */
+.hcar>.hero{transition:opacity 1s ease,visibility 1s}
+.hcar>.hero .hero-in>*{transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
+.hcar>.hero:not(.on) .hero-in>*{opacity:0;transform:translateY(16px)}
+.hcar>.hero.on .hero-in>*:nth-child(2){transition-delay:.08s}.hcar>.hero.on .hero-in>*:nth-child(3){transition-delay:.16s}.hcar>.hero.on .hero-in>*:nth-child(4){transition-delay:.24s}.hcar>.hero.on .hero-in>*:nth-child(5){transition-delay:.32s}
+/* сердечко */
+.btn.fav .h{display:inline-block;position:relative}
+@keyframes heartpop{0%{transform:scale(1)}15%{transform:scale(.7)}45%{transform:scale(1.35)}70%{transform:scale(.92)}100%{transform:scale(1)}}
+@keyframes heartout{0%{transform:scale(1)}40%{transform:scale(.6);opacity:.4}100%{transform:scale(1);opacity:1}}
+@keyframes sparks{0%{opacity:1;box-shadow:0 0 0 -1px var(--gold),0 0 0 -1px var(--gold),0 0 0 -1px var(--gold),0 0 0 -1px var(--gold),0 0 0 -1px var(--gold),0 0 0 -1px var(--gold)}100%{opacity:0;box-shadow:0 -26px 0 -1px var(--gold),23px -13px 0 -1px var(--gold),23px 13px 0 -1px var(--gold),0 26px 0 -1px var(--gold),-23px 13px 0 -1px var(--gold),-23px -13px 0 -1px var(--gold)}}
+@keyframes halo{from{opacity:.7;transform:scale(.4)}to{opacity:0;transform:scale(1.9)}}
+.ibtn.pop svg,.btn.fav.pop .h{animation:heartpop .65s cubic-bezier(.3,.7,.3,1)}
+.ibtn.unpop svg,.btn.fav.unpop .h{animation:heartout .4s ease}
+.ibtn.pop::before,.btn.fav.pop .h::before{content:"";position:absolute;left:50%;top:50%;width:6px;height:6px;margin:-3px;border-radius:50%;animation:sparks .6s cubic-bezier(.2,.7,.3,1) .08s both;pointer-events:none}
+.ibtn.pop::after,.btn.fav.pop .h::after{content:"";position:absolute;left:50%;top:50%;width:30px;height:30px;margin:-15px;border-radius:50%;border:2px solid var(--gold);animation:halo .6s ease-out both;pointer-events:none}
+.ibtn svg{transition:transform .3s cubic-bezier(.2,1.4,.4,1)}
+/* кнопки с характером: Смотреть и Трейлер */
+.bigplay{transition:filter .3s,box-shadow .4s ease}
+.bigplay:hover{transform:none;filter:brightness(1.06);box-shadow:0 14px 42px -10px var(--gold)}
+.bigplay .pi,.ghost .pi{display:inline-grid;transition:transform .4s cubic-bezier(.2,1.4,.4,1)}
+.bigplay:hover .pi{transform:translateX(3px) scale(1.15)}
+.ghost{transition:background .3s ease}.ghost:hover{transform:none}
+.ghost:hover .pi{transform:rotate(-8deg) scale(1.15)}
+.bigplay .pi svg{width:20px;height:20px}
+/* круг трейлера на обложке: появляется при наведении */
+.hbig{width:112px;height:112px;margin-top:-56px;background:rgba(255,255,255,.14);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1.5px solid rgba(255,255,255,.55);color:#fff;opacity:0;transform:scale(.8);transition:opacity .45s ease,transform .55s cubic-bezier(.2,1.3,.4,1),background .3s,color .3s,box-shadow .4s}
+.hbig svg{width:44px;height:44px;margin-left:5px}
+.hero.detail:hover .hbig,.hbig:focus-visible{opacity:1;transform:scale(1)}
+.hbig:hover{background:#fff;color:var(--gold-d);box-shadow:0 0 0 12px rgba(255,255,255,.1)}
+@media (hover:none){.hbig{opacity:1;transform:none}}
+@media (max-width:860px){.hbig{width:76px;height:76px;margin-top:-38px}.hbig svg{width:30px;height:30px}}
+/* стрелки ленты: чуть легче */
+.rwrap .arr{width:44px;height:44px;background:rgba(10,12,19,.6);box-shadow:inset 0 0 0 1px rgba(255,255,255,.12);transition:opacity .35s ease,background .3s,color .3s,box-shadow .3s}
+.rwrap .arr svg{width:22px;height:22px}
+.rwrap .arr:hover{box-shadow:inset 0 0 0 1px var(--gold)}
+/* сезоны и меню */
+.seasons button{transition:background .35s ease,color .35s ease,border-color .35s ease}
+.ddm{transform-origin:top left;animation:ddin .28s cubic-bezier(.2,.9,.3,1.2) both}
+@keyframes ddin{from{opacity:0;transform:translateY(-6px) scale(.96)}to{opacity:1;transform:none}}
+.calm #app>*,.calm .card,.calm .hdots button.on.auto i,.calm .ibtn.pop svg,.calm .btn.fav.pop .h{animation:none}
+.calm .ibtn.pop::before,.calm .ibtn.pop::after,.calm .btn.fav.pop .h::before,.calm .btn.fav.pop .h::after{display:none}
+#app>.tabbar{animation:none}
+.acc{flex-wrap:wrap;justify-content:flex-end;min-width:0;max-width:100%}
+@media (max-width:600px){.srow:has(.acc){flex-direction:column;align-items:flex-start;gap:12px}.srow .acc{justify-content:flex-start}}
