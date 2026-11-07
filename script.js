@@ -355,6 +355,7 @@ function viewSearch() {
   const res = q ? TITLES.filter(t => textOf(t).includes(q)) : TITLES;
   return h("section", { class: "page" }, h("h2", null, L().search + (q ? ": " + $("q").value.trim() : "")), res.length ? grid(res.map(t => titleCard(t))) : h("p", { class: "none" }, L().noFind));
 }
+const vlist = list => h("div", { class: "vlist" }, list);
 function epView(t) {
   const all = cfg.epView !== "row";
   const mk = si => t.seasons[si].episodes.map((e, i) => epCard(t, si, i));
@@ -363,10 +364,10 @@ function epView(t) {
   if (all) {
     t.seasons.forEach((s, si) => {
       const ready = s.episodes.some(e => sourcesOf(e.video).length);
-      body.push(h("div", { class: "sblock" + (ready ? "" : " soon") }, h("h3", { class: "stitle" }, L().season + " " + (si + 1), ready ? null : h("span", null, L().soon)), ready ? grid(mk(si)) : h("p", { class: "soonp" }, L().soonT)));
+      body.push(h("div", { class: "sblock" + (ready ? "" : " soon") }, h("h3", { class: "stitle" }, L().season + " " + (si + 1), ready ? null : h("span", null, L().soon)), ready ? vlist(mk(si)) : h("p", { class: "soonp" }, L().soonT)));
     });
   } else {
-    body.push(h("div", { class: "seasons" }, t.seasons.map((s, i) => h("button", { type: "button", "aria-pressed": i === tSeason, onclick: () => { tSeason = i; render(true); } }, L().season + " " + (i + 1)))), grid(mk(tSeason)));
+    body.push(h("div", { class: "seasons" }, t.seasons.map((s, i) => h("button", { type: "button", "aria-pressed": i === tSeason, onclick: () => { tSeason = i; render(true); } }, L().season + " " + (i + 1)))), vlist(mk(tSeason)));
   }
   return h("div", { class: "epview" }, seg, body);
 }
@@ -457,6 +458,15 @@ function render(anim) {
   $("app").replaceChildren(...[].concat((views[n] || viewHome)()).filter(Boolean));
   document.querySelectorAll(".card p").forEach(p => p.classList.toggle("long", p.scrollHeight > p.clientHeight + 1));
   document.querySelectorAll("[data-r]").forEach(l => l.classList.toggle("on", l.dataset.r === n));
+  revealInit();
+}
+let revObs = null;
+function revealInit() {
+  if (!("IntersectionObserver" in window) || cfg.calm || LITE) return;
+  if (revObs) revObs.disconnect();
+  revObs = new IntersectionObserver(es => es.forEach(en => { if (en.isIntersecting) { en.target.classList.add("in"); revObs.unobserve(en.target); } }), { threshold: 0.08, rootMargin: "0px 0px -6% 0px" });
+  const els = document.querySelectorAll(".vlist .card, .dsec > div, .csec, .stitle, .tags, .facts > div, .stats .tile, .srow, .best .brow");
+  els.forEach((el, i) => { el.classList.add("rv"); el.style.transitionDelay = Math.min((i % 6) * 60, 300) + "ms"; revObs.observe(el); });
 }
 
 (function dropStale() {
