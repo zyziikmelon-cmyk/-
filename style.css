@@ -304,3 +304,25 @@ kbd{font:500 12px/1 ui-monospace,monospace;color:var(--text);background:var(--pa
 .tags{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}
 .tags span{padding:6px 14px;border-radius:999px;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.05);font-size:13px;letter-spacing:.02em}
 .fanhead{padding-top:36px}.fanhead h1{margin:0 0 8px}.fanhead p{opacity:.7;margin:0}
+
+/* build 26: лента серий, новые настройки */
+.epview{position:relative}
+.seg{display:inline-flex;gap:4px;padding:4px;margin:0 0 18px;background:var(--panel);border:1px solid var(--line);border-radius:999px}
+.seg button{background:none;border:0;color:var(--mute);padding:7px 18px;border-radius:999px;cursor:pointer;font:inherit;font-size:14px;transition:background .2s,color .2s}
+.seg button[aria-pressed=true]{background:var(--gold);color:#1c1608}
+.eprail{scroll-snap-type:x mandatory}
+:root{--cw:300px}
+.sz-s{--cw:220px}.sz-l{--cw:380px}
+.scroller .card{flex:0 0 min(var(--cw),74vw)}
+.grid{grid-template-columns:repeat(auto-fill,minmax(calc(var(--cw) - 40px),1fr))}
+.rd-s{--r:4px}.rd-m{--r:12px}.rd-l{--r:22px}
+html.ft-s{zoom:.92}html.ft-l{zoom:1.1}
+.nodesc .card p{display:none}
+.noglow body::before,.noglow .hero::before{display:none}.noglow body{background-image:none}
+
+/* build 26: исправления дизайна */
+.dmeta .score[hidden]+span:before{content:none;margin:0}
+.big.none,.big:not(.good):not(.mid):not(.bad){font-size:48px;color:var(--mute);opacity:.6}
+.grid{grid-template-columns:repeat(auto-fill,minmax(min(var(--cw),100%),var(--cw)));justify-content:start}
+@media (max-width:480px){.q{width:96px;min-width:0}.lang{padding:6px 10px}.top{gap:8px}.logo{font-size:15px}}
+@media (max-width:480px){.q{width:112px}.vbtn{white-space:nowrap;padding-left:12px;padding-right:12px;font-size:13px;letter-spacing:.02em}}
