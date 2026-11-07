@@ -169,12 +169,22 @@ const row = (title, cards, cls) => {
   return h("section", { class: "row " + (cls || "") }, h("h2", null, title), h("div", { class: "rwrap" }, arr(-1), sc, arr(1)));
 };
 function wheelRail(sc) {
+  let target = 0, raf = 0;
+  const step = () => {
+    const d = target - sc.scrollLeft;
+    if (Math.abs(d) < 0.6) { sc.scrollLeft = target; raf = 0; return; }
+    sc.scrollLeft += d * 0.16; raf = requestAnimationFrame(step);
+  };
   sc.addEventListener("wheel", e => {
     if (e.ctrlKey || Math.abs(e.deltaY) < Math.abs(e.deltaX)) return;
-    const max = sc.scrollWidth - sc.clientWidth;
-    if ((e.deltaY > 0 && sc.scrollLeft >= max - 1) || (e.deltaY < 0 && sc.scrollLeft <= 0)) return;
-    e.preventDefault(); sc.scrollLeft += e.deltaY;
+    const max = sc.scrollWidth - sc.clientWidth, base = raf ? target : sc.scrollLeft;
+    if ((e.deltaY > 0 && base >= max - 1) || (e.deltaY < 0 && base <= 0)) return;
+    e.preventDefault();
+    const dy = e.deltaMode === 1 ? e.deltaY * 32 : e.deltaY;
+    target = Math.max(0, Math.min(max, base + dy * 1.1));
+    if (!raf) raf = requestAnimationFrame(step);
   }, { passive: false });
+  sc.addEventListener("touchstart", () => { raf = 0; }, { passive: true });
 }
 const grid = list => h("div", { class: "grid" }, list);
 let popId = "";
@@ -372,7 +382,7 @@ function epView(t) {
   if (all) {
     t.seasons.forEach((s, si) => {
       const ready = s.episodes.some(e => sourcesOf(e.video).length);
-      body.push(h("div", { class: "sblock" + (ready ? "" : " soon") }, h("h3", { class: "stitle" }, L().season + " " + (si + 1), ready ? null : h("span", null, L().soon)), ready ? vcol(mk(si)) : h("p", { class: "soonp" }, L().soonT)));
+      body.push(h("div", { class: "sblock" + (ready ? "" : " soon") }, h("h3", { class: "stitle" }, L().season + " " + (si + 1), ready ? null : h("span", null, L().soon)), ready ? grid(mk(si)) : h("p", { class: "soonp" }, L().soonT)));
     });
   } else {
     body.push(h("div", { class: "seasons" }, t.seasons.map((s, i) => h("button", { type: "button", "aria-pressed": i === tSeason, onclick: () => { tSeason = i; render(true); } }, L().season + " " + (i + 1)))), hrail(mk(tSeason)));
@@ -466,7 +476,7 @@ function render(anim) {
   $("app").replaceChildren(...[].concat((views[n] || viewHome)()).filter(Boolean));
   document.querySelectorAll(".card p").forEach(p => p.classList.toggle("long", p.scrollHeight > p.clientHeight + 1));
   document.querySelectorAll("[data-r]").forEach(l => l.classList.toggle("on", l.dataset.r === n));
-  revealInit();
+  if (!anim && !same) revealInit();
 }
 let revObs = null;
 function revealInit() {

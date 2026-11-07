@@ -347,7 +347,7 @@ html.ft-s{zoom:.92}html.ft-l{zoom:1.1}
 .vlist .card.rv{transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1),background .3s,border-color .3s}
 .calm .rv,.rv.in.calm{opacity:1;transform:none;transition:none}
 @keyframes pgin{from{opacity:0}to{opacity:1}}
-#app>*{animation:pgin .5s ease both}
+#app>*{animation:pgin .6s ease both}#app.noanim>*{animation:none}
 .btn,.bigplay,.ghost,.ibtn,.vbtn,.seg button,.seasons button{transition:transform .2s cubic-bezier(.2,.7,.2,1),background .25s,border-color .25s,color .25s,box-shadow .25s,filter .25s}
 .btn:active,.bigplay:active,.ghost:active,.ibtn:active,.vbtn:active,.seg button:active{transform:scale(.97)}
 .nav a{position:relative}
@@ -372,7 +372,15 @@ html.ft-s{zoom:.92}html.ft-l{zoom:1.1}
 @keyframes ring{from{transform:scale(.6);opacity:.9}to{transform:scale(2.4);opacity:0}}
 @keyframes burst{0%{transform:scale(.3);opacity:1}100%{transform:scale(1.15);opacity:0}}
 .ibtn:not(.on):hover svg{transform:scale(1.12)}.ibtn svg{transition:transform .25s cubic-bezier(.2,1.4,.4,1)}
-.rv{transform:translateY(28px);transition-duration:.9s}
-.hero-in>*{animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
-.hero-in>*:nth-child(2){animation-delay:.1s}.hero-in>*:nth-child(3){animation-delay:.2s}.hero-in>*:nth-child(4){animation-delay:.3s}.hero-in>*:nth-child(5){animation-delay:.4s}.hero-in>*:nth-child(6){animation-delay:.5s}
 .calm .hero-in>*,.calm .ibtn.pop svg,.calm .ibtn.pop::before,.calm .ibtn.pop::after{animation:none}
+
+/* build 31: плавность */
+.rv{opacity:0;transform:translateY(18px);transition:opacity .8s cubic-bezier(.22,.61,.36,1),transform .8s cubic-bezier(.22,.61,.36,1)}
+.rv.in{opacity:1;transform:none}
+.card:hover .thumb,.card:focus-visible .thumb{transform:none;border-color:var(--gold);box-shadow:0 0 0 1px var(--gold),0 12px 30px -14px var(--glow2)}
+.card .thumb{transition:border-color .35s ease,box-shadow .35s ease}
+.card .thumb::after{transition:opacity .35s ease,transform .35s ease}
+.scroller{scrollbar-width:none;-ms-overflow-style:none;scroll-snap-type:none;padding:8px 6px 14px;margin:-8px -6px 0}
+.scroller::-webkit-scrollbar{display:none;width:0;height:0}
+.eprail{scroll-snap-type:none}
+.spin{width:64px;height:64px;margin:-32px;border:0;border-radius:50%;background:conic-gradient(from 0deg,rgba(255,255,255,0) 0%,var(--gold) 100%);-webkit-mask:radial-gradient(farthest-side,transparent calc(100% - 5px),#000 calc(100% - 4px));mask:radial-gradient(farthest-side,transparent calc(100% - 5px),#000 calc(100% - 4px));animation:spinr 1.05s cubic-bezier(.45,.15,.55,.85) infinite}
