@@ -853,3 +853,6 @@ $("aCopy").onclick = () => { const o = $("aOut"); o.select(); try { navigator.cl
   }
   requestAnimationFrame(paintLoop);
 })();
+
+// шапка слегка уплотняется и получает тень при прокрутке
+(function () { const top = document.querySelector(".top"); if (!top) return; let on = false; const f = () => { const s = window.scrollY > 24; if (s !== on) { on = s; top.classList.toggle("scrolled", s); } }; window.addEventListener("scroll", f, { passive: true }); f(); })();

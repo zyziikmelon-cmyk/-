@@ -475,3 +475,92 @@ html.ft-s{zoom:.92}html.ft-l{zoom:1.1}
 #app>.tabbar{animation:none}
 .acc{flex-wrap:wrap;justify-content:flex-end;min-width:0;max-width:100%}
 @media (max-width:600px){.srow:has(.acc){flex-direction:column;align-items:flex-start;gap:12px}.srow .acc{justify-content:flex-start}}
+
+/* ===== сборка 35: большой пакет анимаций ===== */
+:root{--ease:cubic-bezier(.22,.8,.24,1);--spring:cubic-bezier(.3,1.5,.4,1)}
+html{scroll-behavior:smooth}
+/* шапка */
+.top{transition:background .4s ease,box-shadow .4s ease,padding .4s var(--ease)}
+.top.scrolled{box-shadow:0 10px 30px -14px rgba(0,0,0,.7);padding-top:8px;padding-bottom:8px}
+.logo{transition:letter-spacing .5s var(--ease),filter .4s ease}
+.logo:hover{letter-spacing:.2em;filter:drop-shadow(0 0 10px var(--glow2))}
+.logo img{transition:transform .6s var(--spring)}.logo:hover img{transform:rotate(-8deg) scale(1.08)}
+.top .icon,.lang{transition:color .25s ease,border-color .25s ease,transform .35s var(--spring),background .25s ease}
+.top .icon:hover{transform:rotate(45deg) scale(1.08)}.top .icon:active,.lang:active{transform:scale(.92)}
+.q{transition:border-color .3s ease,width .45s var(--ease),box-shadow .4s ease}
+.q:focus{box-shadow:0 0 0 4px color-mix(in srgb,var(--gold) 18%,transparent)}
+.qx{transition:color .2s,background .2s,transform .3s var(--spring)}.qx:hover{transform:translateY(-50%) rotate(90deg)}
+/* подсказки поиска */
+.sug{transform-origin:top right;animation:sugin .3s var(--ease) both}
+@keyframes sugin{from{opacity:0;transform:translateY(-8px) scale(.97)}to{opacity:1;transform:none}}
+.sug .sitem{animation:fadeup .4s var(--ease) both}
+.sug .sitem:nth-child(2){animation-delay:.04s}.sug .sitem:nth-child(3){animation-delay:.08s}.sug .sitem:nth-child(4){animation-delay:.12s}.sug .sitem:nth-child(5){animation-delay:.16s}
+.sitem{transition:background .2s,transform .3s var(--ease)}.sitem:hover{transform:translateX(4px)}
+@keyframes fadeup{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+/* страница заголовка: поочерёдное появление */
+.hero.detail .hero-in>*{animation:fadeup .8s var(--ease) both}
+.hero.detail .hero-in>*:nth-child(1){animation-delay:.05s}.hero.detail .hero-in>*:nth-child(2){animation-delay:.12s}.hero.detail .hero-in>*:nth-child(3){animation-delay:.19s}.hero.detail .hero-in>*:nth-child(4){animation-delay:.26s}.hero.detail .hero-in>*:nth-child(5){animation-delay:.33s}.hero.detail .hero-in>*:nth-child(6){animation-delay:.4s}
+.hero.detail .hero-bg{animation:kb 22s ease-in-out infinite alternate,bgin 1.2s var(--ease) both}
+@keyframes bgin{from{opacity:0;filter:blur(10px)}to{opacity:1;filter:none}}
+/* карточки */
+.card .thumb{transition:transform .5s var(--ease),box-shadow .5s var(--ease),border-color .35s ease}
+.card:hover .thumb{transform:translateY(-5px) scale(1.025);box-shadow:0 22px 44px -18px rgba(0,0,0,.85),0 0 0 1px color-mix(in srgb,var(--gold) 55%,transparent)}
+.card:active .thumb{transform:scale(.985)}
+.card .thumb img{transition:transform .8s var(--ease)}.card:hover .thumb img{transform:scale(1.07)}
+.bar i{transform-origin:left;animation:barin 1s var(--ease) both .3s}
+@keyframes barin{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.num,.rank{transition:transform .4s var(--spring)}.card:hover .num,.card:hover .rank{transform:scale(1.12)}
+/* кнопки: мягкое нажатие и блик */
+.btn,.bigplay,.ghost,.ibtn,.vbtn,.seg button,.seasons button,.dd,.tags span,.brow{-webkit-tap-highlight-color:transparent}
+.btn:active,.bigplay:active,.ghost:active,.ibtn:active,.vbtn:active,.dd:active{transform:scale(.96)}
+.btn.main,.bigplay{position:relative;overflow:hidden}
+.btn.main::after,.bigplay::after{content:"";position:absolute;top:0;bottom:0;left:-60%;width:40%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.35),transparent);transform:skewX(-20deg);transition:left .8s var(--ease);pointer-events:none}
+.btn.main:hover::after,.bigplay:hover::after{left:130%}
+/* теги, факты, плитки */
+.tags span{animation:fadeup .6s var(--ease) both}
+.tags span:nth-child(2){animation-delay:.05s}.tags span:nth-child(3){animation-delay:.1s}.tags span:nth-child(4){animation-delay:.15s}.tags span:nth-child(5){animation-delay:.2s}.tags span:nth-child(6){animation-delay:.25s}
+.facts>div{transition:background .3s,transform .4s var(--ease)}.facts>div:hover{transform:translateY(-3px)}
+.tile{transition:transform .4s var(--ease),border-color .3s,box-shadow .4s}.tile:hover{transform:translateY(-4px);border-color:color-mix(in srgb,var(--gold) 50%,transparent);box-shadow:0 18px 36px -20px rgba(0,0,0,.8)}
+.tile{animation:fadeup .7s var(--ease) both}.tile:nth-child(2){animation-delay:.08s}.tile:nth-child(3){animation-delay:.16s}
+/* настройки */
+.sw{transition:background .35s ease,box-shadow .35s ease}.sw i{transition:transform .4s var(--spring),width .25s ease}
+.sw:active i{width:28px}.sw[aria-checked=true]:active i{transform:translateX(14px)}
+.sw[aria-checked=true]{box-shadow:0 0 16px -2px var(--glow2)}
+.seg button{transition:background .3s ease,color .3s ease,transform .25s var(--spring)}.seg button:hover{transform:translateY(-1px)}
+.bgdot{transition:transform .35s var(--spring),box-shadow .3s}.bgdot:hover{transform:scale(1.15)}.bgdot:active{transform:scale(.92)}
+.settings .sblock,.settings section{animation:fadeup .7s var(--ease) both}
+.settings .sblock:nth-child(2){animation-delay:.07s}.settings .sblock:nth-child(3){animation-delay:.14s}.settings .sblock:nth-child(4){animation-delay:.21s}.settings .sblock:nth-child(5){animation-delay:.28s}
+/* оценка и голосование */
+.stars button{transition:transform .35s var(--spring),color .25s,filter .3s}
+.stars button.on{animation:starpop .5s var(--spring)}
+@keyframes starpop{0%{transform:scale(.6)}60%{transform:scale(1.3)}100%{transform:scale(1)}}
+.brow{transition:transform .35s var(--ease),border-color .3s,background .3s}
+.brow i{transition:width 1s var(--ease)}
+.best .brow{animation:fadeup .6s var(--ease) both}.best .brow:nth-child(3){animation-delay:.06s}.best .brow:nth-child(4){animation-delay:.12s}.best .brow:nth-child(5){animation-delay:.18s}.best .brow:nth-child(6){animation-delay:.24s}.best .brow:nth-child(7){animation-delay:.3s}.best .brow:nth-child(8){animation-delay:.36s}
+/* меню, выпадающий список, переключатель сезонов */
+.dd i{transition:transform .4s var(--spring)}
+.ddm button{transition:background .2s,padding-left .3s var(--ease)}.ddm button:hover{padding-left:18px}
+.seasons button{transition:background .4s ease,color .3s ease,border-color .3s ease,transform .3s var(--spring)}.seasons button:hover{transform:translateY(-2px)}
+/* таббар и тост */
+.tabbar{transition:transform .6s var(--spring),opacity .4s}
+.tabbar button{transition:color .3s,background .3s,transform .3s var(--spring)}.tabbar button:active{transform:scale(.9)}
+.toast{transition:opacity .35s ease,transform .5s var(--spring)}
+/* плеер */
+.player{animation:plin .45s var(--ease) both}
+@keyframes plin{from{opacity:0;transform:scale(1.03)}to{opacity:1;transform:none}}
+.ctrl,.p-top{transition:opacity .45s ease,transform .45s var(--ease)}
+.player.idle .ctrl{transform:translateY(12px)}.player.idle .p-top{transform:translateY(-12px)}
+.skip:not([hidden]),.upnext:not([hidden]){animation:skin .5s var(--ease) both}
+@keyframes skin{from{opacity:0;transform:translateX(24px)}to{opacity:1;transform:none}}
+.ctrl .icon,.ctrl .pill{transition:background .25s,transform .3s var(--spring)}.ctrl .icon:active,.ctrl .pill:active{transform:scale(.88)}
+.knob{transition:transform .25s var(--spring)}
+.empty .em-in{animation:fadeup .6s var(--ease) both}
+/* подвал и фокус */
+.foot{animation:fadeup 1s var(--ease) both .3s}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px;transition:outline-offset .2s}
+/* спокойный режим и системная настройка */
+.calm *,.calm *::before,.calm *::after{animation:none!important;transition-duration:.01s!important}
+.calm html,html.calm{scroll-behavior:auto}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition-duration:.01s!important}html{scroll-behavior:auto}}
+.calm .spin,.spin{animation:spinr .8s linear infinite!important}
+.page.settings,.settings{margin-left:auto!important;margin-right:auto!important}
